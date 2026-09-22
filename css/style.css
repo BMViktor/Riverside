@@ -1,0 +1,1090 @@
+/* ============================================================
+   RIVERSIDE — ALAPSTÍLUS
+
+   Tokenek, komponensek, elrendezés. Ezt minden oldal betölti.
+
+   A színek, méretek és betűk egyetlen helyen, a style.css tetején
+   élnek (TOKENEK). Ha egy színt átírsz ott, minden oldal követi.
+   ============================================================ */
+
+/* Riverside webfonts.
+   SUBSTITUTION NOTE: no brand font files were provided. EB Garamond (display)
+   and Karla (UI/body) are Google Fonts stand-ins chosen to match the brand's
+   warm, quiet, unpretentious character. Swap in licensed files here when available. */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..600&family=Karla:ital,wght@0,300..700;1,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root{
+  --font-display:"EB Garamond","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --font-ui:"Karla","Helvetica Neue",Helvetica,system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+/* --- tokens/colors.css --- */
+:root{
+  /* --- Warm neutrals (meleg fehér → antracit) --- */
+  --n-50:#FBF9F5; --n-100:#F4F1EA; --n-200:#E7E2D9; --n-300:#D3CDC2;
+  --n-400:#ADA79C; --n-500:#857F76; --n-600:#5F5B54; --n-700:#403D39;
+  --n-800:#2A2E2D; --n-900:#1B1E1D;
+
+  /* --- Sage / szürkészöld (primary brand hue) --- */
+  --sage-50:#EEF1EC; --sage-100:#DDE3DA; --sage-200:#C2CCBE; --sage-300:#A3B09E;
+  --sage-400:#8A9689; --sage-500:#6E7C6C; --sage-600:#566152; --sage-700:#414B3F;
+  --sage-800:#2F4238;
+
+  /* --- Slate / kékesszürke (water, secondary hue) --- */
+  --slate-50:#EFF3F5; --slate-100:#E3E8EB; --slate-200:#C9D2D7; --slate-300:#A6B3BA;
+  --slate-400:#8E9BA5; --slate-500:#6F7E88; --slate-600:#54626B; --slate-700:#3C474E;
+
+  /* --- Clay (single warm accent: sunset on the water, terracotta roof) --- */
+  --clay-100:#F6E7DF; --clay-200:#EBCDBD; --clay-300:#DCA98F;
+  --clay-500:#B4674A; --clay-600:#9A5439; --clay-700:#7C422C;
+
+  /* --- Semantic raw --- */
+  --amber-500:#B8863F; --amber-100:#F5E9D3;
+  --red-500:#9E3B2E; --red-100:#F4E1DD;
+
+  /* ================= Semantic aliases ================= */
+  /* Surfaces */
+  --surface-page:var(--n-50);
+  --surface-card:#FFFFFF;
+  --surface-sunken:var(--n-100);
+  --surface-muted:var(--sage-50);
+  --surface-inverse:var(--n-800);
+  --surface-accent:var(--clay-100);
+  --surface-overlay:rgba(27,30,29,.56);
+
+  /* Text */
+  --text-body:var(--n-700);
+  --text-heading:var(--n-900);
+  --text-muted:var(--n-500);
+  --text-subtle:var(--n-400);
+  --text-inverse:var(--n-50);
+  --text-accent:var(--clay-600);
+  --text-link:var(--sage-700);
+  --text-link-hover:var(--clay-600);
+
+  /* Borders */
+  --border-hairline:var(--n-200);
+  --border-default:var(--n-300);
+  --border-strong:var(--n-400);
+  --border-inverse:rgba(251,249,245,.22);
+  --border-focus:var(--sage-700);
+
+  /* Actions */
+  --action-primary-bg:var(--sage-800);
+  --action-primary-bg-hover:var(--sage-700);
+  --action-primary-bg-active:#243329;
+  --action-primary-fg:var(--n-50);
+  --action-secondary-bg:transparent;
+  --action-secondary-border:var(--n-300);
+  --action-secondary-fg:var(--n-800);
+  --action-accent-bg:var(--clay-500);
+  --action-accent-bg-hover:var(--clay-600);
+  --action-accent-fg:#FFFFFF;
+  --action-disabled-bg:var(--n-200);
+  --action-disabled-fg:var(--n-400);
+
+  /* Status */
+  --status-success-fg:var(--sage-700); --status-success-bg:var(--sage-100);
+  --status-warning-fg:#7A5721;        --status-warning-bg:var(--amber-100);
+  --status-danger-fg:var(--red-500);  --status-danger-bg:var(--red-100);
+  --status-info-fg:var(--slate-700);  --status-info-bg:var(--slate-100);
+
+  /* Image treatment */
+  --scrim-bottom:linear-gradient(to top,rgba(27,30,29,.72) 0%,rgba(27,30,29,.32) 42%,rgba(27,30,29,0) 78%); /* @kind color */
+  --scrim-flat:rgba(27,30,29,.34); /* @kind color */
+}
+
+/* --- tokens/typography.css --- */
+:root{
+  /* Display — EB Garamond, used for headlines, room names, pull quotes */
+  --text-display-1:clamp(44px,5.2vw,72px); --lh-display-1:1.04; /* @kind font */ --ls-display-1:-0.02em; /* @kind font */
+  --text-display-2:clamp(34px,3.6vw,52px); --lh-display-2:1.08; /* @kind font */ --ls-display-2:-0.015em; /* @kind font */
+  --text-display-3:32px;                   --lh-display-3:1.14; /* @kind font */ --ls-display-3:-0.01em; /* @kind font */
+
+  /* Headings — Karla for UI, display serif optional for editorial */
+  --text-h1:28px; --lh-h1:1.2; /* @kind font */
+  --text-h2:22px; --lh-h2:1.27; /* @kind font */
+  --text-h3:18px; --lh-h3:1.33; /* @kind font */
+
+  /* Body */
+  --text-lead:20px;  --lh-lead:1.6; /* @kind font */
+  --text-body:16px;  --lh-body:1.62; /* @kind font */
+  --text-small:14px; --lh-small:1.5; /* @kind font */
+  --text-caption:13px; --lh-caption:1.45; /* @kind font */
+
+  /* Eyebrow / overline — the brand's one all-caps treatment */
+  --text-eyebrow:12px; --lh-eyebrow:1.2; /* @kind font */ --ls-eyebrow:0.14em; /* @kind font */
+
+  --weight-light:300; /* @kind font */ --weight-regular:400; /* @kind font */ --weight-medium:500; /* @kind font */ --weight-semibold:600; /* @kind font */ --weight-bold:700; /* @kind font */
+
+  --measure-narrow:36ch; /* @kind font */ --measure-body:62ch; /* @kind font */ --measure-wide:78ch; /* @kind font */
+}
+
+/* --- tokens/spacing.css --- */
+:root{
+  /* 4px base, named by use rather than t-shirt size where it helps */
+  --space-0:0; --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+  --space-5:20px; --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px;
+  --space-16:64px; --space-20:80px; --space-24:96px; --space-32:128px;
+
+  --gutter:24px;            /* grid gutter */
+  --pad-card:24px;          /* standard card padding */
+  --pad-card-lg:32px;
+  --section-y:96px;         /* vertical rhythm between page sections (desktop) */
+  --section-y-sm:56px;
+  --container-max:1200px;
+  --container-narrow:720px;
+  --header-h:72px;
+  --control-h-sm:34px; --control-h-md:42px; --control-h-lg:52px;
+}
+
+/* --- tokens/radii.css --- */
+:root{
+  /* Quiet, near-square geometry. Nothing is pill-shaped except tags and avatars. */
+  --radius-0:0;
+  --radius-xs:2px;
+  --radius-sm:4px;
+  --radius-md:8px;
+  --radius-lg:14px;
+  --radius-xl:20px;
+  --radius-pill:999px;
+  --radius-card:var(--radius-md);
+  --radius-control:var(--radius-sm);
+  --radius-image:var(--radius-md);
+}
+
+/* --- tokens/shadows.css --- */
+:root{
+  /* Warm-tinted, low-alpha, never blue-black. Elevation is rare: borders do most of the work. */
+  --shadow-none:none;
+  --shadow-xs:0 1px 2px rgba(43,40,35,.06);
+  --shadow-sm:0 1px 3px rgba(43,40,35,.07),0 1px 1px rgba(43,40,35,.04);
+  --shadow-md:0 6px 18px -6px rgba(43,40,35,.14),0 2px 6px rgba(43,40,35,.05);
+  --shadow-lg:0 20px 48px -18px rgba(43,40,35,.22),0 4px 12px rgba(43,40,35,.06);
+  --shadow-inset-hairline:inset 0 0 0 1px var(--border-hairline);
+  --ring-focus:0 0 0 3px rgba(47,66,56,.22);
+}
+
+/* --- tokens/motion.css --- */
+:root{
+  --dur-fast:120ms; /* @kind other */ --dur-base:180ms; /* @kind other */ --dur-slow:280ms; /* @kind other */ --dur-image:600ms; /* @kind other */
+  --ease-out:cubic-bezier(.22,.61,.36,1); /* @kind other */      /* default: calm, decelerating */
+  --ease-in-out:cubic-bezier(.4,0,.2,1); /* @kind other */
+  --ease-entrance:cubic-bezier(.16,1,.3,1); /* @kind other */    /* overlays, dialogs */
+  /* No bounce, no spring, no elastic anywhere in this brand. */
+}
+
+/* --- tokens/base.css --- */
+*,*::before,*::after{box-sizing:border-box}
+
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--font-ui);font-size:var(--text-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+h1,h2,h3,h4{color:var(--text-heading);margin:0;font-weight:var(--weight-medium)}
+
+p{margin:0;text-wrap:pretty}
+
+a{color:var(--text-link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:var(--sage-300);transition:color var(--dur-fast) var(--ease-out),text-decoration-color var(--dur-fast) var(--ease-out)}
+
+a:hover{color:var(--text-link-hover);text-decoration-color:currentColor}
+
+:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+
+img{display:block;max-width:100%}
+
+.rv-eyebrow{font-size:var(--text-eyebrow);line-height:var(--lh-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;font-weight:var(--weight-semibold);color:var(--text-muted)}
+
+.rv-display{font-family:var(--font-display);font-weight:var(--weight-regular)}
+
+/* --- core/Button --- */
+.rv-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);font-family:var(--font-ui);font-weight:var(--weight-medium);border:1px solid transparent;border-radius:var(--radius-control);cursor:pointer;text-decoration:none;transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out);white-space:nowrap}
+
+.rv-btn:active:not(:disabled){transform:translateY(1px)}
+
+.rv-btn--sm{height:var(--control-h-sm);padding:0 var(--space-3);font-size:var(--text-small)}
+
+.rv-btn--md{height:var(--control-h-md);padding:0 var(--space-5);font-size:var(--text-small)}
+
+.rv-btn--lg{height:var(--control-h-lg);padding:0 var(--space-6);font-size:var(--text-body)}
+
+.rv-btn--primary{background:var(--action-primary-bg);color:var(--action-primary-fg)}
+
+.rv-btn--primary:hover:not(:disabled){background:var(--action-primary-bg-hover)}
+
+.rv-btn--primary:active:not(:disabled){background:var(--action-primary-bg-active)}
+
+.rv-btn--accent{background:var(--action-accent-bg);color:var(--action-accent-fg)}
+
+.rv-btn--accent:hover:not(:disabled){background:var(--action-accent-bg-hover)}
+
+.rv-btn--secondary{background:var(--surface-card);color:var(--action-secondary-fg);border-color:var(--action-secondary-border)}
+
+.rv-btn--secondary:hover:not(:disabled){border-color:var(--border-strong);background:var(--n-50)}
+
+.rv-btn--ghost{background:transparent;color:var(--text-body);padding-left:var(--space-2);padding-right:var(--space-2)}
+
+.rv-btn--ghost:hover:not(:disabled){background:var(--surface-muted);color:var(--text-heading)}
+
+.rv-btn--inverse{background:rgba(251,249,245,.1);color:var(--text-inverse);border-color:var(--border-inverse)}
+
+.rv-btn--inverse:hover:not(:disabled){background:rgba(251,249,245,.18)}
+
+.rv-btn:disabled,.rv-btn[aria-disabled=true]{background:var(--action-disabled-bg);color:var(--action-disabled-fg);border-color:transparent;cursor:not-allowed;transform:none}
+
+.rv-btn--block{width:100%}
+
+/* --- core/IconButton --- */
+.rv-iconbtn{display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;border-radius:var(--radius-control);background:transparent;color:var(--text-body);cursor:pointer;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+
+.rv-iconbtn--sm{width:var(--control-h-sm);height:var(--control-h-sm)}
+
+.rv-iconbtn--md{width:var(--control-h-md);height:var(--control-h-md)}
+
+.rv-iconbtn--plain:hover{background:var(--surface-muted);color:var(--text-heading)}
+
+.rv-iconbtn--outline{border-color:var(--border-default);background:var(--surface-card)}
+
+.rv-iconbtn--outline:hover{border-color:var(--border-strong)}
+
+.rv-iconbtn--inverse{color:var(--text-inverse);border-color:var(--border-inverse);background:rgba(251,249,245,.08);backdrop-filter:blur(6px)}
+
+.rv-iconbtn--inverse:hover{background:rgba(251,249,245,.18)}
+
+.rv-iconbtn--round{border-radius:var(--radius-pill)}
+
+.rv-iconbtn:disabled{color:var(--action-disabled-fg);cursor:not-allowed}
+
+/* --- core/Badge --- */
+.rv-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-ui);font-size:var(--text-caption);font-weight:var(--weight-medium);line-height:1;padding:5px var(--space-2);border-radius:var(--radius-xs)}
+
+.rv-badge--neutral{background:var(--surface-sunken);color:var(--text-body)}
+
+.rv-badge--success{background:var(--status-success-bg);color:var(--status-success-fg)}
+
+.rv-badge--warning{background:var(--status-warning-bg);color:var(--status-warning-fg)}
+
+.rv-badge--danger{background:var(--status-danger-bg);color:var(--status-danger-fg)}
+
+.rv-badge--info{background:var(--status-info-bg);color:var(--status-info-fg)}
+
+.rv-badge--accent{background:var(--surface-accent);color:var(--text-accent)}
+
+/* --- core/Tag --- */
+.rv-tag{display:inline-flex;align-items:center;gap:6px;font-size:var(--text-small);color:var(--text-body);background:transparent;border:1px solid var(--border-hairline);border-radius:var(--radius-pill);padding:5px var(--space-3);line-height:1.2;font-family:var(--font-ui);transition:border-color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+
+.rv-tag--filled{background:var(--surface-muted);border-color:transparent}
+
+button.rv-tag{cursor:pointer}
+
+button.rv-tag:hover{border-color:var(--border-strong)}
+
+.rv-tag[aria-pressed=true]{background:var(--sage-800);border-color:var(--sage-800);color:var(--n-50)}
+
+.rv-tag__x{display:inline-flex;opacity:.6}
+
+.rv-tag__x:hover{opacity:1}
+
+/* --- core/Card --- */
+.rv-card{background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card);overflow:hidden;transition:border-color var(--dur-base) var(--ease-out),box-shadow var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out)}
+
+.rv-card--plain{background:transparent;border-color:transparent}
+
+.rv-card--muted{background:var(--surface-muted);border-color:transparent}
+
+.rv-card--raised{box-shadow:var(--shadow-sm);border-color:transparent}
+
+.rv-card--interactive{cursor:pointer;display:block;text-align:left;width:100%;font:inherit;color:inherit}
+
+.rv-card--interactive:hover{border-color:var(--border-default);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+
+.rv-card__body{padding:var(--pad-card)}
+
+.rv-card__body--lg{padding:var(--pad-card-lg)}
+
+.rv-card__body--none{padding:0}
+
+/* --- forms/Field --- */
+.rv-field{display:flex;flex-direction:column;gap:6px}
+
+.rv-field__label{font-size:var(--text-small);font-weight:var(--weight-medium);color:var(--text-heading)}
+
+.rv-field__opt{font-weight:var(--weight-regular);color:var(--text-subtle)}
+
+.rv-field__hint{font-size:var(--text-caption);color:var(--text-muted)}
+
+.rv-field__err{font-size:var(--text-caption);color:var(--status-danger-fg);display:flex;gap:6px;align-items:center}
+
+/* --- forms/Input --- */
+.rv-input{display:flex;align-items:center;gap:var(--space-2);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-control);padding:0 var(--space-3);height:var(--control-h-md);transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+
+.rv-input--sm{height:var(--control-h-sm)}
+
+.rv-input--lg{height:var(--control-h-lg);padding:0 var(--space-4)}
+
+.rv-input:focus-within{border-color:var(--border-focus);box-shadow:var(--ring-focus)}
+
+.rv-input--invalid{border-color:var(--status-danger-fg)}
+
+.rv-input--disabled{background:var(--surface-sunken);border-color:var(--border-hairline)}
+
+.rv-input__el{flex:1;min-width:0;border:0;background:transparent;outline:0;font-family:var(--font-ui);font-size:var(--text-body);color:var(--text-heading)}
+
+.rv-input__el::placeholder{color:var(--text-subtle)}
+
+.rv-input__icon{color:var(--text-muted);display:flex}
+
+.rv-input__suffix{font-size:var(--text-small);color:var(--text-muted);white-space:nowrap}
+
+/* --- forms/Textarea --- */
+.rv-textarea{width:100%;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-control);padding:var(--space-3);font-family:var(--font-ui);font-size:var(--text-body);line-height:var(--lh-body);color:var(--text-heading);outline:0;resize:vertical;min-height:104px;transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+
+.rv-textarea::placeholder{color:var(--text-subtle)}
+
+.rv-textarea:focus{border-color:var(--border-focus);box-shadow:var(--ring-focus)}
+
+.rv-textarea--invalid{border-color:var(--status-danger-fg)}
+
+.rv-textarea:disabled{background:var(--surface-sunken)}
+
+/* --- forms/Select --- */
+.rv-select{position:relative;display:flex;align-items:center;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-control);height:var(--control-h-md);padding:0 var(--space-3);transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+
+.rv-select--sm{height:var(--control-h-sm)}
+
+.rv-select--lg{height:var(--control-h-lg);padding:0 var(--space-4)}
+
+.rv-select:focus-within{border-color:var(--border-focus);box-shadow:var(--ring-focus)}
+
+.rv-select__el{appearance:none;flex:1;min-width:0;border:0;background:transparent;outline:0;font-family:var(--font-ui);font-size:var(--text-body);color:var(--text-heading);padding-right:var(--space-5);cursor:pointer}
+
+.rv-select__chev{position:absolute;right:var(--space-3);color:var(--text-muted);pointer-events:none;display:flex}
+
+.rv-select--disabled{background:var(--surface-sunken)}
+
+/* --- forms/Checkbox --- */
+.rv-check{display:flex;gap:var(--space-3);align-items:flex-start;cursor:pointer;font-size:var(--text-small);color:var(--text-body);line-height:1.45}
+
+.rv-check__box{position:relative;flex:0 0 auto;width:18px;height:18px;border:1px solid var(--border-strong);border-radius:var(--radius-xs);background:var(--surface-card);display:flex;align-items:center;justify-content:center;color:transparent;margin-top:1px;transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+
+.rv-check input{position:absolute;opacity:0;width:0;height:0}
+
+.rv-check:hover .rv-check__box{border-color:var(--sage-600)}
+
+.rv-check input:checked + .rv-check__box{background:var(--sage-800);border-color:var(--sage-800);color:#fff}
+
+.rv-check input:focus-visible + .rv-check__box{box-shadow:var(--ring-focus)}
+
+.rv-check input:disabled + .rv-check__box{background:var(--surface-sunken);border-color:var(--border-hairline)}
+
+.rv-check__label{display:flex;flex-direction:column;gap:2px}
+
+.rv-check__desc{color:var(--text-muted);font-size:var(--text-caption)}
+
+/* --- forms/Radio --- */
+.rv-radio{display:flex;gap:var(--space-3);align-items:flex-start;cursor:pointer;font-size:var(--text-small);color:var(--text-body);line-height:1.45}
+
+.rv-radio__dot{position:relative;flex:0 0 auto;width:18px;height:18px;border:1px solid var(--border-strong);border-radius:var(--radius-pill);background:var(--surface-card);margin-top:1px;transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+
+.rv-radio input{position:absolute;opacity:0;width:0;height:0}
+
+.rv-radio:hover .rv-radio__dot{border-color:var(--sage-600)}
+
+.rv-radio input:checked + .rv-radio__dot{border-color:var(--sage-800);box-shadow:inset 0 0 0 4px var(--sage-800)}
+
+.rv-radio input:focus-visible + .rv-radio__dot{box-shadow:var(--ring-focus)}
+
+.rv-radio__label{display:flex;flex-direction:column;gap:2px}
+
+.rv-radio__desc{color:var(--text-muted);font-size:var(--text-caption)}
+
+.rv-radiogroup{display:flex;flex-direction:column;gap:var(--space-3)}
+
+.rv-radiogroup--row{flex-direction:row;gap:var(--space-6)}
+
+/* --- forms/Switch --- */
+.rv-switch{display:flex;align-items:center;gap:var(--space-3);cursor:pointer;font-size:var(--text-small);color:var(--text-body)}
+
+.rv-switch input{position:absolute;opacity:0;width:0;height:0}
+
+.rv-switch__track{position:relative;flex:0 0 auto;width:38px;height:22px;border-radius:var(--radius-pill);background:var(--n-300);transition:background var(--dur-base) var(--ease-out)}
+
+.rv-switch__track::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:var(--radius-pill);background:#fff;box-shadow:var(--shadow-xs);transition:transform var(--dur-base) var(--ease-out)}
+
+.rv-switch input:checked + .rv-switch__track{background:var(--sage-800)}
+
+.rv-switch input:checked + .rv-switch__track::after{transform:translateX(16px)}
+
+.rv-switch input:focus-visible + .rv-switch__track{box-shadow:var(--ring-focus)}
+
+.rv-switch input:disabled + .rv-switch__track{background:var(--n-200)}
+
+/* --- forms/DateRangeField --- */
+.rv-daterange{display:grid;grid-template-columns:1fr 1px 1fr;align-items:stretch;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-control);overflow:hidden}
+
+.rv-daterange:focus-within{border-color:var(--border-focus);box-shadow:var(--ring-focus)}
+
+.rv-daterange--invalid{border-color:var(--status-danger-fg)}
+
+.rv-daterange__sep{background:var(--border-hairline)}
+
+.rv-daterange__cell{display:flex;flex-direction:column;gap:2px;padding:var(--space-2) var(--space-4)}
+
+.rv-daterange__cap{display:flex;align-items:center;gap:6px;font-size:var(--text-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;font-weight:var(--weight-semibold);color:var(--text-muted)}
+
+.rv-daterange__el{border:0;outline:0;background:transparent;font-family:var(--font-ui);font-size:var(--text-body);color:var(--text-heading);padding:0;width:100%}
+
+/* --- navigation/Tabs --- */
+.rv-tabs{display:flex;gap:var(--space-6);border-bottom:1px solid var(--border-hairline)}
+
+.rv-tab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:0 0 var(--space-3);font-family:var(--font-ui);font-size:var(--text-small);font-weight:var(--weight-medium);color:var(--text-muted);cursor:pointer;display:flex;align-items:center;gap:var(--space-2);transition:color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+
+.rv-tab:hover{color:var(--text-heading)}
+
+.rv-tab[aria-selected=true]{color:var(--text-heading);border-bottom-color:var(--sage-800)}
+
+.rv-tabs--pills{border-bottom:0;gap:var(--space-1)}
+
+.rv-tabs--pills .rv-tab{padding:7px var(--space-4);border-radius:var(--radius-pill);border-bottom:0;margin:0}
+
+.rv-tabs--pills .rv-tab[aria-selected=true]{background:var(--surface-muted);color:var(--text-heading)}
+
+/* --- feedback/Dialog --- */
+@keyframes rv-fade{from{opacity:0}to{opacity:1}}
+
+@keyframes rv-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.rv-dialog__scrim{position:fixed;inset:0;background:var(--surface-overlay);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:var(--space-6);z-index:60;animation:rv-fade var(--dur-base) var(--ease-out)}
+
+.rv-dialog{background:var(--surface-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);width:100%;max-width:480px;max-height:88vh;overflow:auto;animation:rv-rise var(--dur-slow) var(--ease-entrance)}
+
+.rv-dialog--wide{max-width:720px}
+
+.rv-dialog__head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-4);padding:var(--space-6) var(--space-6) 0}
+
+.rv-dialog__title{font-family:var(--font-display);font-size:var(--text-display-3);line-height:var(--lh-display-3);color:var(--text-heading)}
+
+.rv-dialog__body{padding:var(--space-4) var(--space-6);color:var(--text-body);font-size:var(--text-small)}
+
+.rv-dialog__foot{display:flex;justify-content:flex-end;gap:var(--space-3);padding:var(--space-4) var(--space-6) var(--space-6)}
+
+/* --- feedback/Toast --- */
+.rv-toast{display:flex;gap:var(--space-3);align-items:flex-start;background:var(--surface-inverse);color:var(--text-inverse);border-radius:var(--radius-md);padding:var(--space-4);box-shadow:var(--shadow-lg);max-width:400px;font-size:var(--text-small);animation:rv-rise var(--dur-slow) var(--ease-entrance)}
+
+.rv-toast--light{background:var(--surface-card);color:var(--text-body);border:1px solid var(--border-hairline)}
+
+.rv-toast__title{font-weight:var(--weight-medium);color:inherit;display:block;margin-bottom:2px}
+
+.rv-toast__icon{display:flex;margin-top:1px}
+
+.rv-toast__close{margin-left:auto;background:none;border:0;color:inherit;opacity:.6;cursor:pointer;display:flex;padding:0}
+
+.rv-toast__close:hover{opacity:1}
+
+/* --- feedback/Tooltip --- */
+.rv-tip{position:relative;display:inline-flex}
+
+.rv-tip__bub{position:absolute;z-index:40;background:var(--surface-inverse);color:var(--text-inverse);font-size:var(--text-caption);line-height:1.35;padding:6px var(--space-2);border-radius:var(--radius-sm);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity var(--dur-fast) var(--ease-out)}
+
+.rv-tip:hover .rv-tip__bub,.rv-tip:focus-within .rv-tip__bub{opacity:1}
+
+.rv-tip__bub--top{bottom:calc(100% + 6px);left:50%;transform:translateX(-50%)}
+
+.rv-tip__bub--bottom{top:calc(100% + 6px);left:50%;transform:translateX(-50%)}
+
+.rv-tip__bub--right{left:calc(100% + 6px);top:50%;transform:translateY(-50%)}
+
+/* --- media/Photo --- */
+.rv-photo{position:relative;overflow:hidden;background:var(--sage-100);border-radius:var(--radius-image);display:block;width:100%}
+
+.rv-photo--square{border-radius:0}
+
+.rv-photo__img{width:100%;height:100%;object-fit:cover;display:block}
+
+.rv-photo__ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--sage-500);background:repeating-linear-gradient(135deg,var(--sage-100) 0 10px,var(--sage-50) 10px 20px);font-size:var(--text-caption);text-align:center;padding:var(--space-3)}
+
+.rv-photo__ph--slate{background:repeating-linear-gradient(135deg,var(--slate-100) 0 10px,var(--slate-50) 10px 20px);color:var(--slate-500)}
+
+.rv-photo__scrim{position:absolute;inset:0;background:var(--scrim-bottom);pointer-events:none}
+
+.rv-photo__cap{position:absolute;left:var(--space-4);right:var(--space-4);bottom:var(--space-4);color:var(--text-inverse);font-size:var(--text-small)}
+
+/* ---------- Konténer és szekcióritmus ---------- */
+.rv-container{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-8);width:100%}
+
+.rv-container--narrow{max-width:var(--container-narrow)}
+
+.rv-section{margin-top:var(--section-y)}
+
+.rv-section--tight{margin-top:var(--space-12)}
+
+.rv-section__head{max-width:60ch;margin-bottom:var(--space-8)}
+
+.rv-section__title{font-family:var(--font-display);font-weight:var(--weight-regular);font-size:var(--text-display-2);line-height:var(--lh-display-2);letter-spacing:var(--ls-display-2)}
+
+.rv-section__lead{margin-top:14px;font-size:var(--text-lead);line-height:var(--lh-lead);color:var(--text-muted);max-width:var(--measure-body)}
+
+/* ---------- Rácsok ---------- */
+.rv-grid{display:grid;gap:var(--gutter)}
+
+.rv-grid--2{grid-template-columns:repeat(2,1fr)}
+
+.rv-grid--3{grid-template-columns:repeat(3,1fr)}
+
+.rv-grid--4{grid-template-columns:repeat(4,1fr)}
+
+.rv-grid--split{grid-template-columns:1fr 1fr;gap:var(--space-12)}
+
+.rv-stack{display:flex;flex-direction:column}
+
+/* Fő tartalom + oldalsó összegző kártya (szobalap, foglalás) */
+.rv-rail{display:grid;grid-template-columns:1fr 380px;gap:var(--space-16);align-items:start;margin-top:var(--space-10)}
+
+.rv-rail__aside{position:sticky;top:96px}
+
+/* ---------- Fejléc ---------- */
+.rv-header{position:sticky;top:0;z-index:30;height:var(--header-h);background:rgba(251,249,245,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-hairline)}
+
+.rv-header__inner{max-width:var(--container-max);margin:0 auto;height:100%;padding:0 var(--space-8);display:flex;align-items:center;gap:var(--space-8)}
+
+.rv-wordmark{appearance:none;background:none;border:0;cursor:pointer;padding:0;text-align:left;text-decoration:none;display:block}
+
+.rv-wordmark__name{font-family:var(--font-display);font-size:26px;letter-spacing:-0.01em;color:var(--text-heading);line-height:1.1;display:block}
+
+.rv-wordmark__sub{display:block;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-subtle);margin-top:-2px}
+
+.rv-nav{display:flex;gap:26px;margin-left:12px}
+
+.rv-navlink{appearance:none;background:none;border:0;padding:4px 0;cursor:pointer;font-family:var(--font-ui);font-size:15px;color:var(--text-body);border-bottom:1px solid transparent;text-decoration:none;transition:color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+
+.rv-navlink:hover{color:var(--text-heading)}
+
+.rv-navlink--active{color:var(--text-heading);border-bottom-color:var(--sage-800)}
+
+.rv-header__actions{margin-left:auto;display:flex;align-items:center;gap:var(--space-4)}
+
+.rv-header__phone{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--text-muted);text-decoration:none}
+
+.rv-header__phone:hover{color:var(--text-heading)}
+
+.rv-header__burger{display:none}
+
+/* A telefon mobilon ikonos gombként marad elérhető, amikor a szám nem fér ki. */
+.rv-header__phoneBtn{display:none}
+
+/* Mobil menü — a fejléc alá nyíló panel, ugyanazokkal a tokenekkel */
+.rv-drawer{position:fixed;inset:var(--header-h) 0 auto 0;z-index:29;background:var(--surface-card);border-bottom:1px solid var(--border-hairline);box-shadow:var(--shadow-md);animation:rv-rise var(--dur-base) var(--ease-out)}
+
+.rv-drawer__inner{padding:var(--space-5) var(--space-5) var(--space-6);display:flex;flex-direction:column;gap:var(--space-4)}
+
+.rv-drawer__link{font-size:17px;color:var(--text-body);text-decoration:none;padding:var(--space-2) 0;border-bottom:1px solid var(--border-hairline)}
+
+.rv-drawer__link--active{color:var(--text-heading)}
+
+/* ---------- Lábléc ---------- */
+.rv-footer{background:var(--surface-inverse);color:var(--text-inverse);margin-top:var(--section-y)}
+
+.rv-footer__grid{max-width:var(--container-max);margin:0 auto;padding:64px var(--space-8) 40px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+
+.rv-footer__col{display:flex;flex-direction:column;gap:10px;font-size:14px;color:rgba(251,249,245,.72)}
+
+.rv-footer__col a{color:inherit;text-decoration:none}
+
+.rv-footer__col a:hover{color:var(--text-inverse)}
+
+.rv-footer__eyebrow{color:rgba(251,249,245,.5)}
+
+.rv-footer__bar{border-top:1px solid var(--border-inverse)}
+
+.rv-footer__barInner{max-width:var(--container-max);margin:0 auto;padding:18px var(--space-8);font-size:13px;color:rgba(251,249,245,.5);display:flex;justify-content:space-between;gap:var(--space-4)}
+
+/* ---------- Hero ---------- */
+.rv-hero{position:relative}
+
+/* A fotó és a rajta ülő szöveg külön rétegben van, hogy a foglalósáv
+   átlapolása ne told el a hero-tartalmat. */
+.rv-hero__media{position:relative}
+
+.rv-hero__overlay{position:absolute;inset:0;display:flex;align-items:flex-end}
+
+.rv-hero__inner{max-width:var(--container-max);margin:0 auto;width:100%;padding:0 var(--space-8) 64px}
+
+.rv-hero__title{font-family:var(--font-display);font-weight:var(--weight-regular);color:var(--text-inverse);font-size:var(--text-display-1);line-height:var(--lh-display-1);letter-spacing:var(--ls-display-1);margin-top:14px;max-width:20ch}
+
+.rv-hero__lead{color:rgba(251,249,245,.86);font-size:var(--text-lead);line-height:1.55;max-width:44ch;margin-top:18px}
+
+.rv-hero__cta{display:flex;gap:var(--space-3);margin-top:28px;flex-wrap:wrap}
+
+/* A rendszer egyetlen átfedő eleme: a foglalósáv 36px-szel a hero fölé lapol. */
+.rv-bookingbar__wrap{max-width:var(--container-max);margin:-36px auto 0;padding:0 var(--space-8);position:relative;z-index:2}
+
+.rv-bookingbar{background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:var(--space-4);display:grid;grid-template-columns:1.4fr .7fr auto;gap:var(--space-3);align-items:end}
+
+/* ---------- Szobasor (Szobák oldal) ---------- */
+.rv-roomrow{display:grid;grid-template-columns:300px 1fr 230px;min-height:200px}
+
+.rv-roomrow__media{height:100%}
+
+.rv-roomrow__body{padding:var(--pad-card-lg)}
+
+.rv-roomrow__rail{border-left:1px solid var(--border-hairline);padding:var(--pad-card-lg);display:flex;flex-direction:column;gap:var(--space-3);justify-content:center;background:var(--n-50)}
+
+/* Kétoszlopos változat: ahol nincs ár-sáv, a szöveg kapja a helyet. */
+.rv-roomrow--two{grid-template-columns:300px 1fr}
+
+/* ---------- Galéria (szobalap) ---------- */
+.rv-gallery{display:grid;grid-template-columns:2fr 1fr;gap:var(--space-3)}
+
+.rv-gallery__side{display:grid;gap:var(--space-3)}
+
+.rv-gallery__thumb{appearance:none;background:none;border:0;padding:0;cursor:pointer;display:block;position:relative}
+
+.rv-gallery__more{position:absolute;right:var(--space-3);bottom:var(--space-3);background:rgba(251,249,245,.14);backdrop-filter:blur(6px);border:1px solid var(--border-inverse);color:var(--text-inverse);font-size:var(--text-small);padding:6px var(--space-3);border-radius:var(--radius-sm)}
+
+/* Lightbox — a Dialog fátyol-értékeivel, teljes szélességű fotóhoz */
+.rv-lightbox{position:fixed;inset:0;z-index:70;background:var(--surface-overlay);backdrop-filter:blur(2px);display:flex;flex-direction:column;animation:rv-fade var(--dur-base) var(--ease-out)}
+
+.rv-lightbox__bar{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) var(--space-6);color:var(--text-inverse);font-size:var(--text-small)}
+
+.rv-lightbox__stage{flex:1;display:flex;align-items:center;justify-content:center;gap:var(--space-4);padding:0 var(--space-6) var(--space-8);min-height:0}
+
+.rv-lightbox__img{max-width:min(1200px,92vw);max-height:78vh;object-fit:contain;border-radius:var(--radius-image);animation:rv-rise var(--dur-slow) var(--ease-entrance)}
+
+/* ---------- Lépésjelző (foglalás) ---------- */
+.rv-steps{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+
+.rv-step{display:flex;align-items:center;gap:10px}
+
+.rv-step__num{width:24px;height:24px;border-radius:var(--radius-pill);display:grid;place-items:center;font-size:12px;font-weight:var(--weight-semibold);background:var(--n-200);color:var(--text-muted);flex:0 0 auto}
+
+.rv-step__num--on{background:var(--sage-800);color:var(--n-50)}
+
+.rv-step__label{font-size:14px;color:var(--text-muted)}
+
+.rv-step__label--on{color:var(--text-heading);font-weight:var(--weight-medium)}
+
+.rv-step__line{width:28px;height:1px;background:var(--border-default)}
+
+/* ---------- Ragadó ár-sáv (csak mobilon) ----------
+   A design szerint a fejléc az egyetlen fixált elem. Mobilon viszont a
+   foglalásnál és a ház oldalán az ár és a következő lépés kiesik a képből,
+   ezért itt kivételt teszünk — a sáv a rendszer saját értékeiből épül. */
+.rv-stickybar{display:none}
+
+.rv-stickybar__price{display:flex;flex-direction:column;gap:2px;min-width:0}
+
+.rv-stickybar__total{font-family:var(--font-display);font-size:20px;color:var(--text-heading);line-height:1.1}
+
+.rv-stickybar__note{font-size:var(--text-caption);color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ---------- Naptár (elérhetőség) ---------- */
+.rv-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+
+.rv-cal__dow{font-size:var(--text-caption);color:var(--text-muted);text-align:center;padding-bottom:var(--space-2)}
+
+.rv-cal__day{appearance:none;border:1px solid transparent;background:var(--surface-card);border-radius:var(--radius-sm);aspect-ratio:1;display:grid;place-items:center;font-family:var(--font-ui);font-size:var(--text-small);color:var(--text-body);cursor:pointer;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+
+.rv-cal__day:hover:not(:disabled){border-color:var(--border-strong)}
+
+.rv-cal__day--muted{color:var(--text-subtle)}
+
+.rv-cal__day--busy{background:var(--status-danger-bg);color:var(--status-danger-fg);cursor:not-allowed}
+
+.rv-cal__day--free{background:var(--status-success-bg);color:var(--status-success-fg)}
+
+.rv-cal__day--sel{background:var(--sage-800);color:var(--n-50);border-color:var(--sage-800)}
+
+.rv-cal__day--range{background:var(--sage-200);color:var(--text-heading)}
+
+/* ---------- Galéria: szűrők, fotórács, nagyító-felirat ---------- */
+.rv-filters{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-8)}
+
+.rv-filter{appearance:none;cursor:pointer;height:var(--control-h-sm);padding:0 var(--space-4);border:1px solid var(--border-default);border-radius:999px;background:var(--surface-page);color:var(--text-body);font-family:var(--font-ui);font-size:var(--text-small);transition:border-color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+
+.rv-filter:hover{border-color:var(--sage-300);background:var(--sage-50)}
+
+.rv-filter:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+
+.rv-filter--on{background:var(--sage-800);border-color:var(--sage-800);color:var(--n-50)}
+
+.rv-photogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)}
+
+.rv-photogrid__item{appearance:none;border:0;padding:0;background:none;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:8px}
+
+.rv-photogrid__item img{transition:transform var(--dur-slow) var(--ease-out)}
+
+.rv-photogrid__item:hover img{transform:scale(1.02)}
+
+.rv-photogrid__item:focus-visible{outline:2px solid var(--border-focus);outline-offset:3px;border-radius:var(--radius-image)}
+
+.rv-photogrid__cap{font-size:var(--text-caption);color:var(--text-muted);line-height:1.5}
+
+.rv-lightbox__caption{max-width:var(--measure-body);margin:0 auto;padding:0 var(--space-6) var(--space-6);color:rgba(251,249,245,.8);font-size:var(--text-caption);text-align:center}
+
+/* ---------- Gyakori kérdések ---------- */
+.rv-faq{border-top:1px solid var(--border-hairline)}
+
+.rv-faq__item{border-bottom:1px solid var(--border-hairline)}
+
+.rv-faq__q{appearance:none;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);text-align:left;background:none;border:0;padding:var(--space-4) 0;color:var(--text-heading);font-family:var(--font-ui);font-size:var(--text-body);line-height:1.5}
+
+.rv-faq__q:hover{color:var(--text-link)}
+
+.rv-faq__q:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+
+.rv-faq__a{padding:0 var(--space-8) var(--space-5) 0;color:var(--text-body);font-size:15px;line-height:var(--lh-body);max-width:var(--measure-body)}
+
+/* ---------- Alternatív időpontok ---------- */
+.rv-alts{border:1px solid var(--border-hairline);border-radius:var(--radius-card);background:var(--surface-muted);padding:var(--space-4)}
+
+.rv-alt{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);width:100%;text-align:left;appearance:none;cursor:pointer;background:var(--surface-page);border:1px solid var(--border-hairline);border-radius:var(--radius-sm);padding:10px var(--space-4);color:var(--text-body);transition:border-color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out)}
+
+.rv-alt:hover{border-color:var(--sage-300);background:var(--sage-50)}
+
+.rv-alt:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+
+.rv-alt__main{display:flex;flex-direction:column;gap:2px;min-width:0}
+
+.rv-alt__dates{color:var(--text-heading);font-size:15px}
+
+.rv-alt__meta{font-size:var(--text-caption);color:var(--text-muted)}
+
+.rv-cal__day:disabled{cursor:not-allowed;opacity:.55}
+
+/* ---------- Adatsor / táblázat (admin) ---------- */
+.rv-table{width:100%;border-collapse:collapse;font-size:var(--text-small)}
+
+.rv-table th{text-align:left;font-weight:var(--weight-medium);color:var(--text-muted);font-size:var(--text-caption);text-transform:uppercase;letter-spacing:var(--ls-eyebrow);padding:0 var(--space-4) var(--space-3);white-space:nowrap}
+
+.rv-table td{padding:var(--space-4);border-top:1px solid var(--border-hairline);color:var(--text-body);vertical-align:middle}
+
+.rv-table tbody tr:hover{background:var(--n-50)}
+
+.rv-table__scroll{overflow-x:auto}
+
+.rv-admin{display:grid;grid-template-columns:232px 1fr;min-height:100vh;align-items:start}
+
+.rv-admin__side{position:sticky;top:0;height:100vh;border-right:1px solid var(--border-hairline);background:var(--surface-card);padding:var(--space-6) var(--space-4);display:flex;flex-direction:column;gap:var(--space-2)}
+
+.rv-admin__link{display:flex;align-items:center;gap:var(--space-3);padding:9px var(--space-3);border-radius:var(--radius-sm);font-size:var(--text-small);color:var(--text-body);text-decoration:none;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+
+.rv-admin__link:hover{background:var(--surface-muted);color:var(--text-heading)}
+
+.rv-admin__link--active{background:var(--surface-muted);color:var(--text-heading);font-weight:var(--weight-medium)}
+
+.rv-admin__main{padding:var(--space-8);min-width:0}
+
+/* ---------- Apró segédosztályok ---------- */
+.rv-muted{color:var(--text-muted)}
+
+.rv-price{font-family:var(--font-display);color:var(--text-heading)}
+
+.rv-row{display:flex;align-items:center;gap:var(--space-3)}
+
+.rv-row--wrap{flex-wrap:wrap}
+
+.rv-spread{display:flex;justify-content:space-between;gap:var(--space-3)}
+
+.rv-tags{display:flex;gap:var(--space-2);flex-wrap:wrap}
+
+.rv-skeleton{background:linear-gradient(90deg,var(--n-100) 25%,var(--n-200) 37%,var(--n-100) 63%);background-size:400% 100%;animation:rv-shimmer 1.4s ease infinite;border-radius:var(--radius-sm)}
+
+@keyframes rv-shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
+
+.rv-empty{display:flex;flex-direction:column;align-items:center;gap:var(--space-3);padding:var(--space-16) var(--space-6);text-align:center;color:var(--text-muted)}
+
+.rv-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* --- Hero: sötétítő fátyol a fotón, hogy a szöveg olvasható legyen --- */
+.rv-hero__media::after{content:'';position:absolute;inset:0;background:var(--scrim-bottom);border-radius:var(--radius-image);pointer-events:none}
+
+.rv-hero__overlay{z-index:1}
+
+/* --- A hamburger gomb csak mobilon kell. A `button` előtag azért kell,
+       hogy erősebb legyen az alatta álló .rv-iconbtn szabálynál. --- */
+button.rv-header__burger{display:none}
+
+/* --- Képek: itt maga az <img> kapja az .rv-photo osztályt --- */
+img.rv-photo{width:100%;height:auto;aspect-ratio:4 / 3;object-fit:cover}
+
+img.rv-photo--tall{aspect-ratio:3 / 4}
+
+.rv-hero__img{width:100%;height:auto;aspect-ratio:21 / 9;min-height:420px;object-fit:cover;display:block;border-radius:var(--radius-image)}
+
+.rv-gallery__thumb img{height:100%}
+
+.rv-roomrow__media{width:100%;height:100%;object-fit:cover;aspect-ratio:4 / 3}
+
+/* --- Jelölőnégyzet: natív input, saját rajz nélkül --- */
+.rv-check input{position:static;opacity:1;width:18px;height:18px;accent-color:var(--sage-800);margin-top:2px;cursor:pointer}
+
+.rv-check__label{display:block;color:var(--text-heading)}
+
+.rv-check__desc{display:block;margin-top:2px}
+
+/* --- Legördülő ---
+   A select a `.rv-select` burkolóban ül: a keret, a magasság és a
+   lefelé mutató nyíl a burkolóé, maga a select átlátszó. A nyíl nem
+   dísz: e nélkül a mező szövegmezőnek látszik, és nem derül ki, hogy
+   választani lehet belőle. */
+.rv-select__el{width:100%;background:transparent;border:0}
+/* A `.rv-field` oszlopos flexbox: a benne ülő mezőt a flexbox
+   összenyomná a tartalom magasságára, ezért nem engedjük zsugorodni. */
+.rv-field > .rv-select,
+.rv-field > .rv-input,
+.rv-field > .rv-daterange{flex:none}
+
+/* --- Dátummezők ---
+   Két egyenlő fél, középre igazítva. A `minmax(0,1fr)` azért kell a
+   sima `1fr` helyett, mert a dátummező saját legkisebb szélessége
+   (nyelvenként más: „2026. 10. 20." hosszabb, mint „10/20/2026")
+   különben szétfeszítené a rácsot, és a jobb oldali fél kilógna —
+   ettől tűnt aszimmetrikusnak a két naptárikon. */
+.rv-daterange{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+
+.rv-daterange__part{display:flex;flex-direction:column;justify-content:center;gap:3px;
+  padding:var(--space-3) var(--space-4);cursor:pointer;min-width:0}
+
+.rv-daterange__part + .rv-daterange__part{border-left:1px solid var(--border-hairline)}
+
+.rv-daterange__label{font-size:var(--text-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;font-weight:var(--weight-semibold);color:var(--text-muted)}
+
+/* A mező kitölti a felét, a naptárikon pedig mindkét oldalon
+   ugyanannyira áll a széltől. */
+.rv-daterange__el{min-width:0;width:100%}
+.rv-daterange__el::-webkit-calendar-picker-indicator{margin:0;padding:0 0 0 6px;cursor:pointer;opacity:.55}
+.rv-daterange__el::-webkit-calendar-picker-indicator:hover{opacity:1}
+
+/* --- Naptár: két hónap egymás mellett --- */
+.rv-cal__head{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-4)}
+
+.rv-cal__months{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)}
+
+.rv-cal__title{font-family:var(--font-display);font-size:18px;color:var(--text-heading);margin-bottom:var(--space-3)}
+
+.rv-cal__dow{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+
+.rv-cal__grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+
+.rv-cal__day--taken{background:var(--status-danger-bg);color:var(--status-danger-fg);cursor:not-allowed}
+
+.rv-cal__legend{display:flex;gap:var(--space-5);margin-top:var(--space-4);font-size:var(--text-caption);color:var(--text-muted)}
+
+.rv-cal__legend span{display:flex;align-items:center;gap:6px}
+
+.rv-dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+
+.rv-dot--free{background:var(--status-success-bg);border:1px solid var(--status-success-fg)}
+
+.rv-dot--taken{background:var(--status-danger-bg);border:1px solid var(--status-danger-fg)}
+
+/* --- Ikonos gomb (a rendszer ikonkészlete helyett itt karakterek) --- */
+.rv-iconbtn{appearance:none;cursor:pointer;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-control);color:var(--text-body);font-size:16px;line-height:1}
+
+.rv-iconbtn:hover{border-color:var(--border-strong)}
+
+.rv-iconbtn--inverse{background:transparent;border-color:var(--border-inverse);color:var(--text-inverse)}
+
+.rv-iconbtn--round{border-radius:999px}
+
+.rv-linkbtn{appearance:none;background:none;border:0;padding:0;cursor:pointer;color:inherit;font:inherit;text-align:left;text-decoration:underline}
+
+/* --- Listák és táblázat --- */
+.rv-list{margin:12px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+
+.rv-table{width:100%;border-collapse:collapse;font-size:15px}
+
+.rv-table th{text-align:left;font-weight:var(--weight-medium);color:var(--text-muted);font-size:var(--text-caption);text-transform:uppercase;letter-spacing:var(--ls-eyebrow);padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--border-hairline)}
+
+.rv-table td{padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--border-hairline);color:var(--text-heading)}
+
+.rv-table tr:last-child td{border-bottom:0}
+
+/* --- Összegző, űrlaplábléc, záró sáv, párbeszédablak --- */
+.rv-osszesito{margin-top:20px;padding-top:18px;border-top:1px solid var(--border-hairline);display:flex;flex-direction:column;gap:10px;font-size:14px}
+
+.rv-osszesito__total{padding-top:10px;border-top:1px solid var(--border-hairline);color:var(--text-heading);font-weight:500}
+
+.rv-summaryrow{display:grid;grid-template-columns:180px 1fr;gap:16px;padding-bottom:12px;border-bottom:1px solid var(--border-hairline);font-size:15px}
+
+.rv-summaryrow > span:last-child{color:var(--text-heading)}
+
+.rv-formfoot{display:flex;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid var(--border-hairline)}
+
+.rv-formfoot > :last-child{margin-left:auto}
+
+.rv-cta{background:var(--surface-muted);border-radius:var(--radius-lg);padding:56px 48px;display:flex;gap:32px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+
+.rv-dialog__veil{position:fixed;inset:0;background:var(--surface-overlay);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:var(--space-6);z-index:60}
+
+.rv-toast{max-width:none}
+
+/* ---------- Nyelvválasztó ----------
+   Három rövid kapcsoló a fejlécben. Szándékosan nem zászló: a zászló
+   országot jelöl, nem nyelvet, és az angolnál ez különösen félrevezető. */
+.rv-langs{display:flex;align-items:center;gap:2px;padding:2px;border:1px solid var(--border-hairline);border-radius:var(--radius-pill)}
+
+.rv-lang{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:26px;padding:0 8px;border-radius:var(--radius-pill);font-size:var(--text-caption);letter-spacing:.04em;color:var(--text-muted);text-decoration:none;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+
+.rv-lang:hover{background:var(--sage-50);color:var(--text-heading)}
+
+.rv-lang--on{background:var(--sage-800);color:var(--n-50)}
+
+.rv-lang:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+
+
+/* ============================================================
+   4. OLDALSEGÉDEK
+
+   A többoldalas változatban a HTML fájlokban nincs `style="..."`
+   attribútum: minden térköz és méret osztályon keresztül jön, hogy
+   a kinézet EGY helyen, itt legyen szerkeszthető.
+
+   Ezek a szabályok nem vezetnek be új színt vagy új betűt — csak a
+   meglévő tokenekből építkeznek.
+   ============================================================ */
+
+/* A `hidden` jelző mindig erősebb, mint a komponens saját display
+   értéke. E nélkül a rejtett nagyító és a rejtett párbeszédablak
+   `display:flex` maradna, és elnyelné a kattintásokat. */
+[hidden]{display:none !important}
+
+/* --- Címsorok és szövegméretek --- */
+.rv-pagetitle{font-family:var(--font-display);font-size:var(--text-display-2);line-height:1.1;margin-top:12px}
+.rv-h2--blokk{font-size:var(--text-display-3);margin-top:12px}
+.rv-h3{font-size:var(--text-h3)}
+.rv-h3--mt{margin-top:16px}
+.rv-h-24{font-size:24px}
+.rv-h-26{font-size:26px}
+.rv-small{font-size:14px}
+.rv-meta{font-size:13px;margin-top:6px}
+.rv-note{margin-top:16px}
+.rv-note--lg{margin-top:32px}
+.rv-lead-measure{max-width:var(--measure-body)}
+.rv-lead-tight{font-size:14px;line-height:1.55}
+.rv-eyebrow--tight{margin-bottom:6px}
+.rv-eyebrow--gap{margin-bottom:12px}
+
+/* --- Térközök és sorok --- */
+.rv-blokk{margin-top:var(--space-16)}
+.rv-container--pt{padding-top:var(--space-6)}
+.rv-container--pt-lg{padding-top:48px}
+.rv-grid--mt{margin-top:var(--space-5)}
+.rv-grid--mt-lg{margin-top:32px}
+.rv-row--gap{gap:12px}
+.rv-row--baseline{align-items:baseline;gap:6px}
+.rv-row--wrap{flex-wrap:wrap;gap:8px}
+.rv-tags--tight{margin-top:14px}
+.rv-tags--loose{margin-top:20px}
+.rv-stack--prose{gap:18px;max-width:var(--measure-body)}
+.rv-stack--cards{gap:16px}
+.rv-stack--checks{gap:12px;margin-top:16px}
+.rv-stack--form{gap:12px;margin-top:18px}
+.rv-stack--wide{gap:22px}
+.rv-stack--links{gap:8px;margin-top:14px}
+.rv-stack--blocks{gap:20px;line-height:1.6}
+
+/* --- Képek --- */
+.rv-photo--offset{margin-top:32px}
+img.rv-photo--wide{aspect-ratio:16 / 9}
+.rv-figure{margin:0}
+.rv-figure__cap{font-size:13px;margin-top:10px}
+.rv-roomcard__body{padding:var(--space-5)}
+
+/* --- Vélemény --- */
+.rv-quote{margin:0}
+.rv-quote__text{color:var(--text-heading);line-height:1.6}
+.rv-quote__by{margin-top:16px;font-size:13px}
+
+/* --- Környék-csempe --- */
+.rv-feature{border-top:1px solid var(--border-default);padding-top:20px}
+.rv-feature__icon{font-size:24px}
+.rv-feature__title{font-size:var(--text-h3);margin-top:12px}
+.rv-feature__text{font-size:14px;margin-top:8px;line-height:1.6}
+
+/* --- Záró sáv --- */
+.rv-cta__title{font-size:var(--text-display-3)}
+.rv-cta__lead{margin-top:10px;max-width:46ch}
+.rv-cta__buttons{display:flex;gap:12px;flex-wrap:wrap}
+
+/* --- Feltételek kivonata --- */
+.rv-terms{font-size:13px;display:flex;flex-direction:column;gap:8px}
+.rv-terms__row{gap:16px;align-items:baseline}
+.rv-terms__row > .rv-muted{flex:0 0 auto}
+.rv-terms__val{text-align:right}
+.rv-terms__box{margin-top:20px;padding-top:18px;border-top:1px solid var(--border-hairline)}
+.rv-terms__box--flush{margin-top:14px;padding-top:0;border-top:0}
+
+/* --- Ár és összesítő --- */
+.rv-price--lg{font-size:34px}
+.rv-osszesito--flush{margin-top:18px;border:0;padding-top:0}
+
+/* --- Fizetés lépései --- */
+.rv-steps-list{margin:14px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;line-height:1.55}
+
+/* --- Lábléc --- */
+.rv-footer__mark{font-family:var(--font-display);font-size:30px}
+.rv-footer__intro{margin-top:12px;max-width:32ch;line-height:1.6}
+
+/* --- Gyakori kérdések: a böngésző saját nyitható eleme ---
+   Nem kell hozzá JavaScript, és billentyűzetről is működik. */
+.rv-faq__item summary.rv-faq__q{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)}
+.rv-faq__item summary.rv-faq__q::-webkit-details-marker{display:none}
+.rv-faq__item summary.rv-faq__q::after{content:'▾';font-size:12px;color:var(--text-muted);transition:transform var(--dur-fast) var(--ease-out)}
+.rv-faq__item[open] summary.rv-faq__q::after{transform:rotate(180deg)}
+
+/* Űrlap: a mezők között egyenletes térköz, hogy a címkék ne
+   tapadjanak az előző mezőhöz. */
+.rv-form{display:flex;flex-direction:column;gap:var(--space-5)}
+
+/* --- Kattintható házcímke ---
+   Amelyik jellemzőhöz van fotó, az a galériára mutat. Hogy ez
+   látszódjon is, kap egy halvány aláhúzást és mutató kurzort. */
+a.rv-tag--link{cursor:pointer;text-decoration:none;border-style:dashed}
+a.rv-tag--link:hover{border-color:var(--border-strong);border-style:solid;background:var(--sage-50);color:var(--text-heading)}
+a.rv-tag--link:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+
+/* A galéria jelzése, ha egy címkéről érkezett a látogató. */
+.rv-filternote{display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-4);font-size:var(--text-small)}
+.rv-filternote__label{color:var(--text-heading)}
+
+/* ---------- Ár- és foglalókártya ----------
+   Egyetlen függőleges ritmus: a kártya minden blokkja ugyanakkora
+   térközzel követi az előzőt. Ezért nincs a kártyán egyetlen kézzel
+   beállított margó sem — az egész innen jön. */
+.rv-arkartya .rv-card__body > * + *{margin-top:var(--space-5)}
+/* Az ár és a hozzá tartozó magyarázat egy egység, ezért közelebb ülnek. */
+.rv-arkartya .rv-arkartya__mibe{margin-top:6px;font-size:14px;line-height:1.4}
+.rv-arkartya__ar{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.rv-arkartya__osszeg{font-size:36px;line-height:1.05}
+.rv-arkartya__egyseg{font-size:15px;color:var(--text-muted)}
+/* A mezők egymáshoz képest szorosabban, mint a kártya nagy blokkjai:
+   dátum és létszám ugyanannak a kérdésnek a két fele. */
+.rv-arkartya__mezok{display:flex;flex-direction:column;gap:var(--space-4)}
+.rv-arkartya .rv-osszesito{margin-top:var(--space-5)}
+
+/* Tájékoztató doboz: elmondja, mi a helyzet, de nem riaszt.
+   A piros szín a valódi űrlaphibáké marad. */
+.rv-notice{display:block;padding:12px 14px;border-radius:var(--radius-sm);
+  background:var(--surface-muted);border:1px solid var(--border-hairline);
+  font-size:14px;line-height:1.5;color:var(--text-heading)}
+
+/* ---------- Szemantikai kiegészítők ---------- */
+/* Ugrólink: csak akkor látszik, amikor billentyűzettel odaér a fókusz. */
+.rv-skiplink{position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--sage-800);color:var(--n-50);padding:10px var(--space-5);
+  border-radius:0 0 var(--radius-sm) 0;font-size:var(--text-small);text-decoration:none}
+.rv-skiplink:focus{left:0}
+
+/* A lábléc elérhetősége <address> — a böngésző dőlten szedné. */
+address.rv-footer__col{font-style:normal}
+
+/* A fotórács lista: a felsorolásjel nem kell, a rács marad. */
+ul.rv-photogrid{list-style:none;margin:0;padding:0}
+ul.rv-photogrid > li{display:contents}
+
+/* --- Amit a JavaScript rajzol ki (alternatívák, naptár, találat) --- */
+.rv-alts__title{color:var(--text-heading);font-weight:500}
+.rv-cal__hint{font-size:13px}
+.rv-stack--rows{gap:14px;margin-top:var(--space-6)}
+.rv-spread--top{align-items:flex-start;gap:16px}
+.rv-osszesito__deposit{color:var(--text-accent)}

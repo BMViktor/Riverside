@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Adatkezelés — Riverside vendégház</title>
+<meta name="description" content="Milyen adatot kérünk foglaláskor, miért kezeljük, meddig őrizzük, és kinek adjuk át. A Riverside vendégház adatkezelési tájékoztatója." />
+<link rel="canonical" href="https://riverside-koeroes.com/adatkezeles.html" />
+<link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/adatkezeles.html" />
+<link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/datenschutz.html" />
+<link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/privacy.html" />
+<link rel="alternate" hreflang="x-default" href="https://riverside-koeroes.com/adatkezeles.html" />
+
+<!-- Megosztáskor (üzenetben, közösségi oldalon) ez látszik. -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Riverside" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:title" content="Adatkezelés — Riverside vendégház" />
+<meta property="og:description" content="Milyen adatot kérünk foglaláskor, miért kezeljük, meddig őrizzük, és kinek adjuk át. A Riverside vendégház adatkezelési tájékoztatója." />
+<meta property="og:url" content="https://riverside-koeroes.com/adatkezeles.html" />
+<meta property="og:image" content="https://riverside-koeroes.com/assets/images/garden-dock-willow.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#3f4a44" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/animations.css" />
+
+<!-- Strukturált adat: a keresőnek ebből derül ki, hogy szálláshelyről
+     van szó, hol van, mennyibe kerül és hogyan lehet elérni. -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VacationRental","name":"Riverside","description":"Két hálószoba, nagy kert, medence, szauna és saját stég — az egész ház a tiétek, 5 + 2 főnek. Csendes hely — nem bulinyaraló.","url":"https://riverside-koeroes.com/index.html","image":["https://riverside-koeroes.com/assets/images/garden-dock-willow.jpg","https://riverside-koeroes.com/assets/images/pool-1.jpg"],"telephone":"+36 20 483 2723","email":"info@riverside-koeroes.com","address":{"@type":"PostalAddress","streetAddress":"Keresztháti üdülősor 86.","postalCode":"5561","addressLocality":"Békésszentandrás","addressCountry":"HU"},"geo":{"@type":"GeoCoordinates","latitude":46.88871763134489,"longitude":20.49571814291005},"numberOfRooms":3,"occupancy":{"@type":"QuantitativeValue","maxValue":7},"floorSize":{"@type":"QuantitativeValue","value":85,"unitCode":"MTK"},"petsAllowed":true,"priceRange":"55000–75000 HUF","checkinTime":"15:00","checkoutTime":"10:00"}</script>
+</head>
+<body>
+
+<!-- Billentyűzettel érkezőknek: az első Tab a tartalomra ugrik, nem
+     kell végigjárni a menüt minden oldalon. -->
+<a class="rv-skiplink" href="#tartalom">Ugrás a tartalomra</a>
+
+<header class="rv-header">
+  <div class="rv-header__inner">
+    <a class="rv-wordmark" href="index.html">
+      <span class="rv-wordmark__name">Riverside</span>
+      <span class="rv-wordmark__sub">Békésszentandrás</span>
+    </a>
+    <nav class="rv-nav" aria-label="Menü">
+      <a class="rv-navlink" href="a-haz.html"
+          >A ház</a>
+      <a class="rv-navlink" href="arak.html"
+          >Árak</a>
+      <a class="rv-navlink" href="galeria.html"
+          >Galéria</a>
+      <a class="rv-navlink" href="kornyek.html"
+          >Környék</a>
+      <a class="rv-navlink" href="kapcsolat.html"
+          >Kapcsolat</a>
+    </nav>
+    <div class="rv-header__actions">
+      <div class="rv-langs" role="group" aria-label="Nyelv"><a class="rv-lang rv-lang--on" href="adatkezeles.html" lang="hu"
+        aria-current="true" title="Magyar">HU</a><a class="rv-lang" href="de/datenschutz.html" lang="de"
+         title="Deutsch">DE</a><a class="rv-lang" href="en/privacy.html" lang="en"
+         title="English">EN</a></div>
+      <a class="rv-header__phone" href="tel:+36204832723">+36 20 483 2723</a>
+      <a class="rv-btn rv-btn--accent rv-btn--md" href="foglalas.html" >Foglalás</a>
+      <button type="button" class="rv-header__burger rv-iconbtn" id="rv-burger"
+              aria-label="Menü" aria-expanded="false" aria-controls="rv-drawer">☰</button>
+    </div>
+  </div>
+  <!-- Diszkrét haladásjelző a fejléc alsó élén — görgetés közben nő. -->
+  <span class="rv-progress" aria-hidden="true"></span>
+  <div class="rv-drawer" id="rv-drawer" hidden>
+    <div class="rv-drawer__inner">
+      <a class="rv-drawer__link" href="a-haz.html">A ház</a>
+      <a class="rv-drawer__link" href="arak.html">Árak</a>
+      <a class="rv-drawer__link" href="galeria.html">Galéria</a>
+      <a class="rv-drawer__link" href="kornyek.html">Környék</a>
+      <a class="rv-drawer__link" href="kapcsolat.html">Kapcsolat</a>
+      <a class="rv-drawer__link" href="foglalasom.html">Foglalásom</a>
+      <a class="rv-drawer__link" href="hazirend.html">Házirend</a>
+    </div>
+  </div>
+</header>
+
+<!-- Állandó magasságú helykitöltő a rögzített fejléc alatt. Ezért nem
+     ugrik meg a tartalom, amikor a fejléc görgetéskor összehúzódik.
+     A főoldalon nincs rá szükség: ott a fejléc a fotóra ül rá. -->
+<div class="rv-headerSpacer" aria-hidden="true"></div>
+
+<main id="tartalom" class="rv-hasCtabar">
+<section class="rv-container rv-container--narrow rv-section">
+      <div class="rv-reveal"><div class="rv-section__head">
+        <div class="rv-eyebrow rv-eyebrow--gap">Adatkezelés</div>
+        <h1 class="rv-section__title">Hogyan kezeljük az adataitokat.</h1>
+        
+      </div></div>
+      <div class="rv-reveal" style="--rv-delay:90ms"><div class="rv-stack rv-stack--cards">
+        <div class="rv-card rv-card--default">
+      <div class="rv-card__body rv-card__body--lg"><h2 class="rv-h3">Milyen adatot kezelünk</h2><ul class="rv-list"><li>Foglaláskor: név, e-mail cím, telefonszám, az érkezés és távozás dátuma, a vendégek száma és a megjegyzésed.</li><li>Érkezéskor a jogszabály szerint a személyes dokumentumok adatai, a Nemzeti Turisztikai Adatszolgáltató Központ felé teljesítendő adatszolgáltatás miatt.</li></ul></div>
+    </div>
+        <div class="rv-card rv-card--default">
+      <div class="rv-card__body rv-card__body--lg"><h2 class="rv-h3">Miért kezeljük</h2><ul class="rv-list"><li>A foglalás visszaigazolásához és teljesítéséhez, valamint a számlázáshoz.</li><li>A jogszabályi adatszolgáltatási kötelezettség teljesítéséhez (NTAK).</li></ul></div>
+    </div>
+        <div class="rv-card rv-card--default">
+      <div class="rv-card__body rv-card__body--lg"><h2 class="rv-h3">Meddig őrizzük</h2><ul class="rv-list"><li>A foglalással kapcsolatos adatokat a számviteli előírások szerinti ideig.</li><li>A meg nem valósult érdeklődéseket legfeljebb egy évig.</li></ul></div>
+    </div>
+        <div class="rv-card rv-card--default">
+      <div class="rv-card__body rv-card__body--lg"><h2 class="rv-h3">Kinek adjuk át</h2><ul class="rv-list"><li>A jogszabály által előírt hatósági adatszolgáltatáson kívül senkinek.</li><li>Ez a weboldal nem használ nyomkövető vagy hirdetési sütiket.</li></ul></div>
+    </div>
+        <div class="rv-card rv-card--default">
+      <div class="rv-card__body rv-card__body--lg"><h2 class="rv-h3">A te jogaid</h2><ul class="rv-list"><li>Kérheted a rólad tárolt adatok másolatát, helyesbítését vagy törlését.</li><li>Írj a info@riverside-koeroes.com címre, és 30 napon belül válaszolunk.</li></ul></div>
+    </div>
+      </div>
+      <p class="rv-muted rv-small rv-note--lg">Ez a tájékoztató a demó része; az éles indulás előtt érdemes jogásszal átnézetni.</p></div>
+    </section>
+</main>
+
+<footer class="rv-footer">
+  <div class="rv-footer__grid">
+    <div>
+      <div class="rv-footer__mark">Riverside</div>
+      <p class="rv-footer__col rv-footer__intro">Nyaraló a Kákafoki holtág partján, Békésszentandráson. Két hálószoba, nagy kert, medence és saját stég — 5 + 2 főnek, egyben kiadva.</p>
+    </div>
+    <nav class="rv-footer__col" aria-label="A ház">
+      <span class="rv-eyebrow rv-footer__eyebrow">A ház</span>
+      <a href="a-haz.html">A ház és felszereltség</a>
+      <a href="galeria.html">Galéria</a>
+      <a href="arak.html">Árak és feltételek</a>
+      <a href="foglalas.html">Foglalás</a>
+      <a href="foglalasom.html">Foglalásom</a>
+    </nav>
+    <address class="rv-footer__col">
+      <span class="rv-eyebrow rv-footer__eyebrow">Kapcsolat</span>
+      <a href="tel:+36204832723">+36 20 483 2723</a>
+      <a href="mailto:info@riverside-koeroes.com">info@riverside-koeroes.com</a>
+      <span>5561 Békésszentandrás, Keresztháti üdülősor 86.</span>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </address>
+    <nav class="rv-footer__col" aria-label="Jó tudni">
+      <span class="rv-eyebrow rv-footer__eyebrow">Jó tudni</span>
+      <a href="hazirend.html">Házirend</a>
+      <a href="adatkezeles.html">Adatkezelés</a>
+      <a href="impresszum.html">Impresszum</a>
+      <button type="button" class="rv-linkbtn" id="rv-demo-vissza">Demóadatok visszaállítása</button>
+    </nav>
+  </div>
+  <div class="rv-footer__bar">
+    <div class="rv-footer__barInner">
+      <span>© 2026 Riverside · Piroska és Wilhelm Wenz</span>
+      <span>NTAK: MA 21002678</span>
+    </div>
+  </div>
+</footer>
+<div class="rv-ctabar">
+  <div class="rv-ctabar__price">
+    <span class="rv-ctabar__from">55 000 Ft</span>
+    <span class="rv-ctabar__note">/ éj · a teljes házra</span>
+  </div>
+  <a class="rv-btn rv-btn--accent rv-btn--md" href="foglalas.html" >Foglalás</a>
+</div>
+
+<script>
+  /* Az oldal önazonossága: nyelv, oldalkulcs és a többi oldal címe.
+     A js/ mappa fájljai ebből tudják, hova irányítsanak. */
+  window.RV = { nyelv: 'hu', oldal: 'adatkezeles', utak: {"fooldal":"index.html","haz":"a-haz.html","arak":"arak.html","galeria":"galeria.html","kornyek":"kornyek.html","foglalas":"foglalas.html","foglalasom":"foglalasom.html","hazirend":"hazirend.html","kapcsolat":"kapcsolat.html","adatkezeles":"adatkezeles.html","impresszum":"impresszum.html"} };
+</script>
+<script src="js/szotar.js"></script>
+<script src="js/tartalom.js"></script>
+<script src="js/adatok.js"></script>
+<script src="js/logika.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigacio.js"></script>
+<script src="js/animaciok.js"></script>
+
+
+</body>
+</html>

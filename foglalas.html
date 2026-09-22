@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nézzük meg, mikor jönnétek. — Riverside</title>
+<meta name="description" content="Átnézzük a naptárt, és 24 órán belül válaszolunk e-mailben. A visszaigazolás után a  foglaló átutalásával válik élővé a foglalás." />
+<link rel="canonical" href="https://riverside-koeroes.com/foglalas.html" />
+<link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/foglalas.html" />
+<link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/buchen.html" />
+<link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/book.html" />
+<link rel="alternate" hreflang="x-default" href="https://riverside-koeroes.com/foglalas.html" />
+
+<!-- Megosztáskor (üzenetben, közösségi oldalon) ez látszik. -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Riverside" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:title" content="Nézzük meg, mikor jönnétek. — Riverside" />
+<meta property="og:description" content="Átnézzük a naptárt, és 24 órán belül válaszolunk e-mailben. A visszaigazolás után a  foglaló átutalásával válik élővé a foglalás." />
+<meta property="og:url" content="https://riverside-koeroes.com/foglalas.html" />
+<meta property="og:image" content="https://riverside-koeroes.com/assets/images/garden-dock-willow.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#3f4a44" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/animations.css" />
+
+<!-- Strukturált adat: a keresőnek ebből derül ki, hogy szálláshelyről
+     van szó, hol van, mennyibe kerül és hogyan lehet elérni. -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VacationRental","name":"Riverside","description":"Két hálószoba, nagy kert, medence, szauna és saját stég — az egész ház a tiétek, 5 + 2 főnek. Csendes hely — nem bulinyaraló.","url":"https://riverside-koeroes.com/index.html","image":["https://riverside-koeroes.com/assets/images/garden-dock-willow.jpg","https://riverside-koeroes.com/assets/images/pool-1.jpg"],"telephone":"+36 20 483 2723","email":"info@riverside-koeroes.com","address":{"@type":"PostalAddress","streetAddress":"Keresztháti üdülősor 86.","postalCode":"5561","addressLocality":"Békésszentandrás","addressCountry":"HU"},"geo":{"@type":"GeoCoordinates","latitude":46.88871763134489,"longitude":20.49571814291005},"numberOfRooms":3,"occupancy":{"@type":"QuantitativeValue","maxValue":7},"floorSize":{"@type":"QuantitativeValue","value":85,"unitCode":"MTK"},"petsAllowed":true,"priceRange":"55000–75000 HUF","checkinTime":"15:00","checkoutTime":"10:00"}</script>
+</head>
+<body>
+
+<!-- Billentyűzettel érkezőknek: az első Tab a tartalomra ugrik, nem
+     kell végigjárni a menüt minden oldalon. -->
+<a class="rv-skiplink" href="#tartalom">Ugrás a tartalomra</a>
+
+<header class="rv-header">
+  <div class="rv-header__inner">
+    <a class="rv-wordmark" href="index.html">
+      <span class="rv-wordmark__name">Riverside</span>
+      <span class="rv-wordmark__sub">Békésszentandrás</span>
+    </a>
+    <nav class="rv-nav" aria-label="Menü">
+      <a class="rv-navlink" href="a-haz.html"
+          >A ház</a>
+      <a class="rv-navlink" href="arak.html"
+          >Árak</a>
+      <a class="rv-navlink" href="galeria.html"
+          >Galéria</a>
+      <a class="rv-navlink" href="kornyek.html"
+          >Környék</a>
+      <a class="rv-navlink" href="kapcsolat.html"
+          >Kapcsolat</a>
+    </nav>
+    <div class="rv-header__actions">
+      <div class="rv-langs" role="group" aria-label="Nyelv"><a class="rv-lang rv-lang--on" href="foglalas.html" lang="hu"
+        aria-current="true" title="Magyar">HU</a><a class="rv-lang" href="de/buchen.html" lang="de"
+         title="Deutsch">DE</a><a class="rv-lang" href="en/book.html" lang="en"
+         title="English">EN</a></div>
+      <a class="rv-header__phone" href="tel:+36204832723">+36 20 483 2723</a>
+      <a class="rv-btn rv-btn--accent rv-btn--md" href="foglalas.html" >Foglalás</a>
+      <button type="button" class="rv-header__burger rv-iconbtn" id="rv-burger"
+              aria-label="Menü" aria-expanded="false" aria-controls="rv-drawer">☰</button>
+    </div>
+  </div>
+  <!-- Diszkrét haladásjelző a fejléc alsó élén — görgetés közben nő. -->
+  <span class="rv-progress" aria-hidden="true"></span>
+  <div class="rv-drawer" id="rv-drawer" hidden>
+    <div class="rv-drawer__inner">
+      <a class="rv-drawer__link" href="a-haz.html">A ház</a>
+      <a class="rv-drawer__link" href="arak.html">Árak</a>
+      <a class="rv-drawer__link" href="galeria.html">Galéria</a>
+      <a class="rv-drawer__link" href="kornyek.html">Környék</a>
+      <a class="rv-drawer__link" href="kapcsolat.html">Kapcsolat</a>
+      <a class="rv-drawer__link" href="foglalasom.html">Foglalásom</a>
+      <a class="rv-drawer__link" href="hazirend.html">Házirend</a>
+    </div>
+  </div>
+</header>
+
+<!-- Állandó magasságú helykitöltő a rögzített fejléc alatt. Ezért nem
+     ugrik meg a tartalom, amikor a fejléc görgetéskor összehúzódik.
+     A főoldalon nincs rá szükség: ott a fejléc a fotóra ül rá. -->
+<div class="rv-headerSpacer" aria-hidden="true"></div>
+
+<main id="tartalom">
+<div class="rv-container rv-hasStickybar rv-container--pt-lg">
+  <div class="rv-eyebrow">Foglalás</div>
+  <h1 class="rv-display rv-pagetitle">Nézzük meg, mikor jönnétek.</h1>
+
+  <div class="rv-steps rv-note--lg">
+    <div class="rv-step">
+      <span class="rv-step__num rv-step__num--on" data-lepesszam="0">1</span>
+      <span class="rv-step__label rv-step__label--on" data-lepescimke="0">Időpont és vendégek</span>
+    </div>
+    <div class="rv-step">
+      <span class="rv-step__num" data-lepesszam="1">2</span>
+      <span class="rv-step__label" data-lepescimke="1">Adatok</span>
+    </div>
+    <div class="rv-step">
+      <span class="rv-step__num" data-lepesszam="2">3</span>
+      <span class="rv-step__label" data-lepescimke="2">Áttekintés</span>
+    </div>
+  </div>
+
+  <div class="rv-rail">
+    <div class="rv-card rv-card--default">
+      <div class="rv-card__body rv-card__body--lg"><div class="rv-step-panel rv-stack rv-stack--wide" data-lepes="0">
+    <div class="rv-field">
+      <label class="rv-field__label">Időpont</label>
+      <div class="rv-daterange">
+        <label class="rv-daterange__part">
+          <span class="rv-daterange__label">Érkezés</span>
+          <input class="rv-daterange__el" type="date" id="rv-erkezes" />
+        </label>
+        <label class="rv-daterange__part">
+          <span class="rv-daterange__label">Távozás</span>
+          <input class="rv-daterange__el" type="date" id="rv-tavozas" />
+        </label>
+      </div>
+      <div class="rv-field__err" id="rv-hiba-datum" hidden></div>
+      <div class="rv-field__hint" id="rv-idopont-sugo"></div>
+    </div>
+
+    <div class="rv-alts" id="rv-alternativak" hidden></div>
+
+    <div class="rv-card rv-card--muted">
+      <div class="rv-card__body"><div id="rv-naptar"></div></div>
+    </div>
+
+    <div class="rv-grid rv-grid--2">
+      <div class="rv-field">
+        <label class="rv-field__label" for="rv-felnott">Felnőtt</label>
+        <div class="rv-select">
+      <select class="rv-select__el" id="rv-felnott"><option value="1">1 fő</option><option value="2" selected>2 fő</option><option value="3">3 fő</option><option value="4">4 fő</option><option value="5">5 fő</option><option value="6">6 fő</option><option value="7">7 fő</option></select>
+      <span class="rv-select__chev" aria-hidden="true">▾</span>
+    </div>
+        <div class="rv-field__err" id="rv-hiba-letszam" hidden></div>
+        <div class="rv-field__hint">18 éves kor felett — utánuk jár az idegenforgalmi adó.</div>
+      </div>
+      <div class="rv-field">
+        <label class="rv-field__label" for="rv-gyerek">Gyerek<span class="rv-field__opt"> — nem kötelező</span></label>
+        <div class="rv-select">
+      <select class="rv-select__el" id="rv-gyerek"><option value="0">nincs gyerek</option><option value="1">1 gyerek</option><option value="2">2 gyerek</option><option value="3">3 gyerek</option><option value="4">4 gyerek</option><option value="5">5 gyerek</option><option value="6">6 gyerek</option></select>
+      <span class="rv-select__chev" aria-hidden="true">▾</span>
+    </div>
+        <div class="rv-field__hint">18 év alatt, adómentes.</div>
+      </div>
+    </div>
+
+    <div class="rv-field">
+      <label class="rv-field__label">Fekvőhelyek</label>
+      <div class="rv-card rv-card--muted">
+      <div class="rv-card__body"><p class="rv-small rv-lead-tight">
+          <strong>5 fő számára alapból biztosított fekvőhely</strong> a két emeleti hálószobában, további 2 fő részére a nappali kanapéja ágyként használható.
+        </p>
+        <div class="rv-stack rv-stack--checks">
+          <label class="rv-check">
+            <input type="checkbox" id="rv-kanape" />
+            <span>
+              <span class="rv-check__label">A nappali kanapéját ágyként kérjük</span>
+              <span class="rv-check__desc" id="rv-kanape-leiras">Ha nem kéritek, ülőgarnitúraként hagyjuk.</span>
+            </span>
+          </label>
+          <label class="rv-check">
+            <input type="checkbox" id="rv-gyerekagy" />
+            <span>
+              <span class="rv-check__label">Gyermekágy a háromágyas szobába</span>
+              <span class="rv-check__desc">Díjmentes, és nem számít bele a férőhelybe.</span>
+            </span>
+          </label>
+          <label class="rv-check">
+            <input type="checkbox" id="rv-etetoszek" />
+            <span>
+              <span class="rv-check__label">Etetőszék</span>
+              <span class="rv-check__desc">Díjmentes, szólj előre és bekészítjük.</span>
+            </span>
+          </label>
+        </div></div>
+    </div>
+    </div>
+
+    <div class="rv-field">
+      <label class="rv-field__label">Extrák<span class="rv-field__opt"> — nem kötelező</span></label>
+      <div class="rv-stack rv-stack--checks">
+            <label class="rv-check">
+      <input type="checkbox" data-extra="kutya" />
+      <span>
+        <span class="rv-check__label">Kutyát hozunk — nincs felár</span>
+        <span class="rv-check__desc">Felár nélkül, ha szobatiszta. A saját fekhelyét hozzátok.</span>
+      </span>
+    </label>
+            <label class="rv-check">
+      <input type="checkbox" data-extra="takaritas" />
+      <span>
+        <span class="rv-check__label">Heti takarítás és ágyneműcsere — nincs felár</span>
+        <span class="rv-check__desc">Egy hétnél hosszabb tartózkodásnál díjmentes, előre egyeztetve.</span>
+      </span>
+    </label>
+      </div>
+      <div class="rv-field__hint">Bármikor módosítható, amíg nem írunk vissza.</div>
+    </div>
+  </div>
+      <div class="rv-step-panel rv-stack rv-stack--wide" data-lepes="1" hidden>
+    <div class="rv-grid rv-grid--2">
+      <div class="rv-field">
+        <label class="rv-field__label" for="rv-nev">Név</label>
+        <div class="rv-input"><input class="rv-input__el" id="rv-nev" type="text" placeholder="Kovács Anna" /></div>
+        <div class="rv-field__err" id="rv-hiba-nev" hidden></div>
+      </div>
+      <div class="rv-field">
+        <label class="rv-field__label" for="rv-telefon">Telefonszám<span class="rv-field__opt"> — nem kötelező</span></label>
+        <div class="rv-input"><input class="rv-input__el" id="rv-telefon" type="tel" placeholder="+36" /></div>
+        <div class="rv-field__hint">Csak ha vissza kell hívnunk.</div>
+      </div>
+    </div>
+    <div class="rv-field">
+      <label class="rv-field__label" for="rv-email">E-mail</label>
+      <div class="rv-input"><input class="rv-input__el" id="rv-email" type="email" placeholder="anna@example.hu" /></div>
+      <div class="rv-field__err" id="rv-hiba-email" hidden></div>
+    </div>
+    <div class="rv-field">
+      <label class="rv-field__label" for="rv-megjegyzes">Megjegyzés<span class="rv-field__opt"> — nem kötelező</span></label>
+      <textarea class="rv-textarea" id="rv-megjegyzes" rows="3" placeholder="Két kisgyerekkel jövünk, kutyát is hoznánk."></textarea>
+      <div class="rv-field__hint">Allergia, korai érkezés, bármi.</div>
+    </div>
+  </div>
+      <div class="rv-step-panel rv-stack rv-stack--wide" data-lepes="2" hidden>
+    <div id="rv-attekintes"></div>
+    <div class="rv-toast rv-toast--light">
+      <span>
+        <span class="rv-toast__title">Mi történik ezután?</span>
+        <span id="rv-mit-tortenik"></span>
+      </span>
+    </div>
+    <div class="rv-field">
+      <label class="rv-check">
+        <input type="checkbox" id="rv-elfogadom" />
+        <span><span class="rv-check__label">Elfogadom a <a href="hazirend.html">házirendet</a></span></span>
+      </label>
+      <div class="rv-field__err" id="rv-hiba-feltetel" hidden></div>
+    </div>
+  </div>
+      <div class="rv-formfoot">
+        <button type="button" class="rv-btn rv-btn--secondary rv-btn--md" id="rv-vissza" hidden>← Vissza</button>
+        <button type="button" class="rv-btn rv-btn--accent rv-btn--lg" id="rv-tovabb" >Tovább →</button>
+      </div></div>
+    </div>
+    <div class="rv-card rv-card--default rv-rail__aside">
+      <div class="rv-card__body rv-card__body--lg"><img src="assets/images/house-river.jpg" alt="A stég a holtágon, csónakkal és vízibiciklivel"
+       class="rv-photo" width="362" height="271"
+       loading="lazy" decoding="async" />
+      <h2 class="rv-display rv-h-24 rv-h3--mt">Riverside</h2>
+      <div class="rv-muted rv-meta" id="rv-aside-meta">85 m²</div>
+      <div class="rv-osszesito rv-osszesito--flush" id="rv-osszesito"></div>
+      <div class="rv-field__err rv-note" id="rv-aside-hiba" hidden></div>
+      <div class="rv-terms__box"><div class="rv-terms">
+      <div class="rv-spread rv-terms__row">
+        <span class="rv-muted">Foglaló</span><span class="rv-terms__val">A szállásdíj 30%-a átutalással — ezzel válik élővé a foglalás</span>
+      </div><div class="rv-spread rv-terms__row">
+        <span class="rv-muted">Hátralék</span><span class="rv-terms__val">Érkezés előtt 14 nappal átutalva, vagy készpénzben érkezéskor</span>
+      </div><div class="rv-spread rv-terms__row">
+        <span class="rv-muted">Idegenforgalmi adó</span><span class="rv-terms__val">700 Ft / fő / éj, 18 év felett — érkezéskor készpénzben</span>
+      </div><div class="rv-spread rv-terms__row">
+        <span class="rv-muted">Kaució</span><span class="rv-terms__val">70 000 Ft érkezéskor készpénzben, távozáskor visszajár</span>
+      </div><div class="rv-spread rv-terms__row">
+        <span class="rv-muted">Lemondás</span><span class="rv-terms__val">Érkezés előtt 21 napon túl a foglalót visszafizetjük</span>
+      </div>
+      <a class="rv-row" href="hazirend.html">Teljes házirend →</a>
+    </div></div></div>
+    </div>
+  </div>
+
+  <div class="rv-stickybar">
+    <div class="rv-stickybar__price">
+      <span class="rv-stickybar__total" id="rv-sav-osszeg">—</span>
+      <span class="rv-stickybar__note" id="rv-sav-megjegyzes">Válassz időpontot</span>
+    </div>
+    <button type="button" class="rv-btn rv-btn--accent rv-btn--md" id="rv-sav-tovabb" >Tovább</button>
+  </div>
+
+  <div class="rv-dialog__veil" id="rv-kesz" hidden>
+  <div class="rv-dialog" role="dialog" aria-modal="true" aria-labelledby="rv-kesz-cim">
+    <div class="rv-dialog__head"><h2 class="rv-display rv-h-26" id="rv-kesz-cim">Megkaptuk a kérésedet</h2></div>
+    <div class="rv-dialog__body">
+      <p id="rv-kesz-szoveg"></p>
+      <p class="rv-muted rv-note" id="rv-kesz-masodik"></p>
+      <div class="rv-row rv-row--wrap rv-note" id="rv-kesz-jelvenyek"></div>
+      <p class="rv-small rv-note">Ezzel az azonosítóval és az e-mail címeddel bármikor megnézheted a foglalásod a <a href="foglalasom.html">Foglalásom</a> oldalon — lemondani is ott tudsz.</p>
+    </div>
+    <div class="rv-dialog__foot">
+      <a class="rv-btn rv-btn--secondary rv-btn--md" href="index.html" >Vissza a főoldalra</a>
+      <a class="rv-btn rv-btn--primary rv-btn--md" href="foglalasom.html" >A foglalásom</a>
+    </div>
+  </div>
+</div>
+</div>
+</main>
+
+<footer class="rv-footer">
+  <div class="rv-footer__grid">
+    <div>
+      <div class="rv-footer__mark">Riverside</div>
+      <p class="rv-footer__col rv-footer__intro">Nyaraló a Kákafoki holtág partján, Békésszentandráson. Két hálószoba, nagy kert, medence és saját stég — 5 + 2 főnek, egyben kiadva.</p>
+    </div>
+    <nav class="rv-footer__col" aria-label="A ház">
+      <span class="rv-eyebrow rv-footer__eyebrow">A ház</span>
+      <a href="a-haz.html">A ház és felszereltség</a>
+      <a href="galeria.html">Galéria</a>
+      <a href="arak.html">Árak és feltételek</a>
+      <a href="foglalas.html">Foglalás</a>
+      <a href="foglalasom.html">Foglalásom</a>
+    </nav>
+    <address class="rv-footer__col">
+      <span class="rv-eyebrow rv-footer__eyebrow">Kapcsolat</span>
+      <a href="tel:+36204832723">+36 20 483 2723</a>
+      <a href="mailto:info@riverside-koeroes.com">info@riverside-koeroes.com</a>
+      <span>5561 Békésszentandrás, Keresztháti üdülősor 86.</span>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </address>
+    <nav class="rv-footer__col" aria-label="Jó tudni">
+      <span class="rv-eyebrow rv-footer__eyebrow">Jó tudni</span>
+      <a href="hazirend.html">Házirend</a>
+      <a href="adatkezeles.html">Adatkezelés</a>
+      <a href="impresszum.html">Impresszum</a>
+      <button type="button" class="rv-linkbtn" id="rv-demo-vissza">Demóadatok visszaállítása</button>
+    </nav>
+  </div>
+  <div class="rv-footer__bar">
+    <div class="rv-footer__barInner">
+      <span>© 2026 Riverside · Piroska és Wilhelm Wenz</span>
+      <span>NTAK: MA 21002678</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  /* Az oldal önazonossága: nyelv, oldalkulcs és a többi oldal címe.
+     A js/ mappa fájljai ebből tudják, hova irányítsanak. */
+  window.RV = { nyelv: 'hu', oldal: 'foglalas', utak: {"fooldal":"index.html","haz":"a-haz.html","arak":"arak.html","galeria":"galeria.html","kornyek":"kornyek.html","foglalas":"foglalas.html","foglalasom":"foglalasom.html","hazirend":"hazirend.html","kapcsolat":"kapcsolat.html","adatkezeles":"adatkezeles.html","impresszum":"impresszum.html"} };
+</script>
+<script src="js/szotar.js"></script>
+<script src="js/tartalom.js"></script>
+<script src="js/adatok.js"></script>
+<script src="js/logika.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigacio.js"></script>
+<script src="js/animaciok.js"></script>
+<script src="js/naptar.js"></script>
+<script src="js/foglalas.js"></script>
+
+</body>
+</html>

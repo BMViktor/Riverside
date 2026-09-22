@@ -1,0 +1,10 @@
+<!-- @dsCard group="Brand" viewport="700x170" name="Iconography — Lucide" subtitle="1.5px stroke, 20px default. Substituted set: no brand icons were provided." -->
+<!doctype html><html lang="hu"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>body{padding:20px;background:var(--surface-page)}.row{display:flex;gap:24px;flex-wrap:wrap;color:var(--sage-700)}.it{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;color:var(--text-subtle);font-family:var(--font-mono)}</style></head><body>
+<div class="row" id="r"></div>
+<script>
+const names=['waves','fish','tent-tree','trees','flame','bike','wifi','coffee','bed-double','bath','dog','car','map-pin','phone','calendar','sun'];
+document.getElementById('r').innerHTML=names.map(n=>'<div class="it"><i data-lucide="'+n+'" style="width:24px;height:24px;stroke-width:1.5"></i>'+n+'</div>').join('');
+lucide.createIcons();
+</script></body></html>

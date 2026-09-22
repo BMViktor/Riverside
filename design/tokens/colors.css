@@ -1,0 +1,74 @@
+:root{
+  /* --- Warm neutrals (meleg fehér → antracit) --- */
+  --n-50:#FBF9F5; --n-100:#F4F1EA; --n-200:#E7E2D9; --n-300:#D3CDC2;
+  --n-400:#ADA79C; --n-500:#857F76; --n-600:#5F5B54; --n-700:#403D39;
+  --n-800:#2A2E2D; --n-900:#1B1E1D;
+
+  /* --- Sage / szürkészöld (primary brand hue) --- */
+  --sage-50:#EEF1EC; --sage-100:#DDE3DA; --sage-200:#C2CCBE; --sage-300:#A3B09E;
+  --sage-400:#8A9689; --sage-500:#6E7C6C; --sage-600:#566152; --sage-700:#414B3F;
+  --sage-800:#2F4238;
+
+  /* --- Slate / kékesszürke (water, secondary hue) --- */
+  --slate-50:#EFF3F5; --slate-100:#E3E8EB; --slate-200:#C9D2D7; --slate-300:#A6B3BA;
+  --slate-400:#8E9BA5; --slate-500:#6F7E88; --slate-600:#54626B; --slate-700:#3C474E;
+
+  /* --- Clay (single warm accent: sunset on the water, terracotta roof) --- */
+  --clay-100:#F6E7DF; --clay-200:#EBCDBD; --clay-300:#DCA98F;
+  --clay-500:#B4674A; --clay-600:#9A5439; --clay-700:#7C422C;
+
+  /* --- Semantic raw --- */
+  --amber-500:#B8863F; --amber-100:#F5E9D3;
+  --red-500:#9E3B2E; --red-100:#F4E1DD;
+
+  /* ================= Semantic aliases ================= */
+  /* Surfaces */
+  --surface-page:var(--n-50);
+  --surface-card:#FFFFFF;
+  --surface-sunken:var(--n-100);
+  --surface-muted:var(--sage-50);
+  --surface-inverse:var(--n-800);
+  --surface-accent:var(--clay-100);
+  --surface-overlay:rgba(27,30,29,.56);
+
+  /* Text */
+  --text-body:var(--n-700);
+  --text-heading:var(--n-900);
+  --text-muted:var(--n-500);
+  --text-subtle:var(--n-400);
+  --text-inverse:var(--n-50);
+  --text-accent:var(--clay-600);
+  --text-link:var(--sage-700);
+  --text-link-hover:var(--clay-600);
+
+  /* Borders */
+  --border-hairline:var(--n-200);
+  --border-default:var(--n-300);
+  --border-strong:var(--n-400);
+  --border-inverse:rgba(251,249,245,.22);
+  --border-focus:var(--sage-700);
+
+  /* Actions */
+  --action-primary-bg:var(--sage-800);
+  --action-primary-bg-hover:var(--sage-700);
+  --action-primary-bg-active:#243329;
+  --action-primary-fg:var(--n-50);
+  --action-secondary-bg:transparent;
+  --action-secondary-border:var(--n-300);
+  --action-secondary-fg:var(--n-800);
+  --action-accent-bg:var(--clay-500);
+  --action-accent-bg-hover:var(--clay-600);
+  --action-accent-fg:#FFFFFF;
+  --action-disabled-bg:var(--n-200);
+  --action-disabled-fg:var(--n-400);
+
+  /* Status */
+  --status-success-fg:var(--sage-700); --status-success-bg:var(--sage-100);
+  --status-warning-fg:#7A5721;        --status-warning-bg:var(--amber-100);
+  --status-danger-fg:var(--red-500);  --status-danger-bg:var(--red-100);
+  --status-info-fg:var(--slate-700);  --status-info-bg:var(--slate-100);
+
+  /* Image treatment */
+  --scrim-bottom:linear-gradient(to top,rgba(27,30,29,.72) 0%,rgba(27,30,29,.32) 42%,rgba(27,30,29,0) 78%); /* @kind color */
+  --scrim-flat:rgba(27,30,29,.34); /* @kind color */
+}

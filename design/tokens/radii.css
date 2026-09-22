@@ -1,0 +1,13 @@
+:root{
+  /* Quiet, near-square geometry. Nothing is pill-shaped except tags and avatars. */
+  --radius-0:0;
+  --radius-xs:2px;
+  --radius-sm:4px;
+  --radius-md:8px;
+  --radius-lg:14px;
+  --radius-xl:20px;
+  --radius-pill:999px;
+  --radius-card:var(--radius-md);
+  --radius-control:var(--radius-sm);
+  --radius-image:var(--radius-md);
+}

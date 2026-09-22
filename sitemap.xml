@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://riverside-koeroes.com/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/a-haz.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/a-haz.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/das-haus.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/the-house.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/arak.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/arak.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/preise.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/prices.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/galeria.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/galeria.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/galerie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/gallery.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/kornyek.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/kornyek.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/umgebung.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/around-here.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/foglalas.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/foglalas.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/buchen.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/book.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/foglalasom.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/foglalasom.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/meine-buchung.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/my-booking.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/hazirend.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/hazirend.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/hausordnung.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/house-rules.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/kapcsolat.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/kapcsolat.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/contact.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/adatkezeles.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/adatkezeles.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/datenschutz.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/privacy.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/impresszum.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/impresszum.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/impressum.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/imprint.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/das-haus.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/a-haz.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/das-haus.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/the-house.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/preise.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/arak.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/preise.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/prices.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/galerie.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/galeria.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/galerie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/gallery.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/umgebung.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/kornyek.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/umgebung.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/around-here.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/buchen.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/foglalas.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/buchen.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/book.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/meine-buchung.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/foglalasom.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/meine-buchung.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/my-booking.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/hausordnung.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/hazirend.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/hausordnung.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/house-rules.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/kontakt.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/kapcsolat.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/contact.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/datenschutz.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/adatkezeles.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/datenschutz.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/privacy.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/de/impressum.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/impresszum.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/impressum.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/imprint.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/the-house.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/a-haz.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/das-haus.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/the-house.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/prices.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/arak.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/preise.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/prices.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/gallery.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/galeria.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/galerie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/gallery.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/around-here.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/kornyek.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/umgebung.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/around-here.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/book.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/foglalas.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/buchen.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/book.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/my-booking.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/foglalasom.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/meine-buchung.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/my-booking.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/house-rules.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/hazirend.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/hausordnung.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/house-rules.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/kapcsolat.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/contact.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/adatkezeles.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/datenschutz.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/privacy.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://riverside-koeroes.com/en/imprint.html</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/impresszum.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/impressum.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/imprint.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

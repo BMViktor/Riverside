@@ -1,0 +1,49 @@
+<!-- @dsCard group="Website" viewport="1280x820" name="Riverside — weboldal" subtitle="Főoldal, szobák, szobalap, környék és a foglalási folyamat" -->
+<!-- @startingPoint section="Website" subtitle="Full guesthouse site: hero, rooms, room detail, booking flow" viewport="1280x820" -->
+<!doctype html><html lang="hu"><head><meta charset="utf-8"><title>Riverside — vendégház a Körös partján</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>
+/* Lazy proxy: primitives resolve from the compiled bundle at render time,
+   so load order of the bundle never matters. */
+(function () {
+  var cache = {};
+  function wrap(name) {
+    return cache[name] || (cache[name] = function (props) {
+      var ns = window.RiversideDesignSystem_54ad61 || {};
+      var C = ns[name];
+      return C ? React.createElement(C, props) : null;
+    });
+  }
+  window.RVDS = new Proxy({}, { get: function (t, k) { return typeof k === 'string' ? wrap(k) : undefined; } });
+})();
+</script>
+<style>body{background:var(--surface-page)}</style></head>
+<body><div id="root"></div>
+<script type="text/babel" src="Shell.jsx"></script>
+<script type="text/babel" src="Home.jsx"></script>
+<script type="text/babel" src="Rooms.jsx"></script>
+<script type="text/babel" src="RoomDetail.jsx"></script>
+<script type="text/babel" src="Area.jsx"></script>
+<script type="text/babel" src="Booking.jsx"></script>
+<script type="text/babel">
+function App(){
+  const [page,setPage]=React.useState('home');
+  const go=(p)=>{setPage(p);window.scrollTo(0,0)};
+  const onBook=()=>go('booking');
+  return <React.Fragment>
+    <Header page={page} go={go} onBook={onBook} />
+    {page==='home' && <Home go={go} onBook={onBook} />}
+    {page==='rooms' && <Rooms go={go} onBook={onBook} />}
+    {page==='room' && <RoomDetail go={go} onBook={onBook} />}
+    {page==='area' && <Area onBook={onBook} />}
+    {page==='booking' && <Booking go={go} />}
+    <Footer go={go} />
+  </React.Fragment>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script></body></html>

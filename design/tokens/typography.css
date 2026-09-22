@@ -1,0 +1,24 @@
+:root{
+  /* Display — EB Garamond, used for headlines, room names, pull quotes */
+  --text-display-1:clamp(44px,5.2vw,72px); --lh-display-1:1.04; /* @kind font */ --ls-display-1:-0.02em; /* @kind font */
+  --text-display-2:clamp(34px,3.6vw,52px); --lh-display-2:1.08; /* @kind font */ --ls-display-2:-0.015em; /* @kind font */
+  --text-display-3:32px;                   --lh-display-3:1.14; /* @kind font */ --ls-display-3:-0.01em; /* @kind font */
+
+  /* Headings — Karla for UI, display serif optional for editorial */
+  --text-h1:28px; --lh-h1:1.2; /* @kind font */
+  --text-h2:22px; --lh-h2:1.27; /* @kind font */
+  --text-h3:18px; --lh-h3:1.33; /* @kind font */
+
+  /* Body */
+  --text-lead:20px;  --lh-lead:1.6; /* @kind font */
+  --text-body:16px;  --lh-body:1.62; /* @kind font */
+  --text-small:14px; --lh-small:1.5; /* @kind font */
+  --text-caption:13px; --lh-caption:1.45; /* @kind font */
+
+  /* Eyebrow / overline — the brand's one all-caps treatment */
+  --text-eyebrow:12px; --lh-eyebrow:1.2; /* @kind font */ --ls-eyebrow:0.14em; /* @kind font */
+
+  --weight-light:300; /* @kind font */ --weight-regular:400; /* @kind font */ --weight-medium:500; /* @kind font */ --weight-semibold:600; /* @kind font */ --weight-bold:700; /* @kind font */
+
+  --measure-narrow:36ch; /* @kind font */ --measure-body:62ch; /* @kind font */ --measure-wide:78ch; /* @kind font */
+}

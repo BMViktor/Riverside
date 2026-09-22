@@ -1,0 +1,16 @@
+:root{
+  /* 4px base, named by use rather than t-shirt size where it helps */
+  --space-0:0; --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+  --space-5:20px; --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px;
+  --space-16:64px; --space-20:80px; --space-24:96px; --space-32:128px;
+
+  --gutter:24px;            /* grid gutter */
+  --pad-card:24px;          /* standard card padding */
+  --pad-card-lg:32px;
+  --section-y:96px;         /* vertical rhythm between page sections (desktop) */
+  --section-y-sm:56px;
+  --container-max:1200px;
+  --container-narrow:720px;
+  --header-h:72px;
+  --control-h-sm:34px; --control-h-md:42px; --control-h-lg:52px;
+}

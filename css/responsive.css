@@ -1,0 +1,100 @@
+/* ============================================================
+   RIVERSIDE — TÖRÉSPONTOK
+
+   Ami a laptop (1120px), tablet (900px) és mobil (640px)
+   méreteknél változik. Az alapszabályok a style.css-ben vannak.
+
+   A színek, méretek és betűk egyetlen helyen, a style.css tetején
+   élnek (TOKENEK). Ha egy színt átírsz ott, minden oldal követi.
+   ============================================================ */
+
+/* ============================================================
+   Laptop — 1120px alatt
+   ============================================================ */
+@media (max-width:1120px){
+  .rv-rail{grid-template-columns:1fr 340px;gap:var(--space-10)}
+  .rv-grid--4{grid-template-columns:repeat(2,1fr)}
+  .rv-footer__grid{grid-template-columns:1.4fr 1fr 1fr;row-gap:32px}
+  .rv-admin{grid-template-columns:200px 1fr}
+}
+
+/* ============================================================
+   Tablet — 900px alatt
+   ============================================================ */
+@media (max-width:900px){
+  .rv-grid--3{grid-template-columns:repeat(2,1fr)}
+  .rv-photogrid{grid-template-columns:repeat(2,1fr)}
+  .rv-grid--split{grid-template-columns:1fr;gap:var(--space-10)}
+  .rv-rail{grid-template-columns:1fr;gap:var(--space-10)}
+  .rv-rail__aside{position:static}
+  .rv-gallery{grid-template-columns:1fr}
+  .rv-gallery__side{grid-template-columns:1fr 1fr}
+  .rv-roomrow{grid-template-columns:240px 1fr}
+  .rv-roomrow__rail{grid-column:1 / -1;border-left:0;border-top:1px solid var(--border-hairline);flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .rv-bookingbar{grid-template-columns:1fr 1fr;gap:var(--space-3)}
+  .rv-bookingbar > :last-child{grid-column:1 / -1}
+  .rv-header__phone{display:none}
+  .rv-header__phoneBtn{display:inline-flex}
+  .rv-stickybar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;align-items:center;justify-content:space-between;gap:var(--space-4);padding:12px var(--space-5);background:rgba(251,249,245,.94);backdrop-filter:blur(10px);border-top:1px solid var(--border-hairline)}
+  .rv-hasStickybar{padding-bottom:92px}
+  .rv-admin{grid-template-columns:1fr}
+  .rv-admin__side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--border-hairline);flex-direction:row;overflow-x:auto;padding:var(--space-3) var(--space-4)}
+  .rv-admin__link{white-space:nowrap}
+  .rv-admin__main{padding:var(--space-6) var(--space-5)}
+}
+
+/* ============================================================
+   Mobil — 640px alatt
+   ============================================================ */
+@media (max-width:640px){
+  :root{--section-y:var(--section-y-sm);--pad-card-lg:var(--space-5)}
+  .rv-container,.rv-header__inner,.rv-hero__inner,.rv-bookingbar__wrap,.rv-footer__grid,.rv-footer__barInner{padding-left:var(--space-5);padding-right:var(--space-5)}
+  .rv-nav{display:none}
+  .rv-header__burger{display:inline-flex}
+  /* 390px-en a wordmark, a telefon, a Foglalás és a menü együtt kilógna. */
+  .rv-header__inner{gap:var(--space-3)}
+  .rv-header__actions{gap:var(--space-1)}
+  .rv-header__actions .rv-btn{height:var(--control-h-sm);padding:0 var(--space-3);font-size:var(--text-small)}
+  .rv-wordmark__sub{display:none}
+  .rv-grid--2,.rv-grid--3,.rv-grid--4{grid-template-columns:1fr}
+  .rv-photogrid{grid-template-columns:1fr}
+  .rv-filters{gap:var(--space-1)}
+  .rv-filter{padding:0 var(--space-3)}
+  .rv-gallery__side{grid-template-columns:1fr 1fr}
+  .rv-roomrow{grid-template-columns:1fr}
+  .rv-roomrow__media{height:auto;aspect-ratio:4 / 3}
+  .rv-roomrow__rail{flex-direction:column;align-items:stretch}
+  .rv-bookingbar{grid-template-columns:1fr}
+  .rv-bookingbar__wrap{margin-top:-24px}
+  .rv-hero__inner{padding-bottom:40px}
+  .rv-footer__grid{grid-template-columns:1fr;padding-top:48px}
+  .rv-footer__barInner{flex-direction:column;gap:var(--space-2)}
+  .rv-steps{gap:var(--space-4)}
+  .rv-step__line{display:none}
+  .rv-section__head{margin-bottom:var(--space-6)}
+  .rv-lightbox__stage{padding:0 var(--space-3) var(--space-6)}
+}
+
+/* --- Mobil --- */
+@media (max-width:900px){
+  .rv-cal__months{grid-template-columns:1fr;gap:var(--space-5)}
+}
+
+@media (max-width:640px){
+  button.rv-header__burger{display:inline-flex}
+  .rv-hero__img{min-height:360px;aspect-ratio:3 / 4}
+  .rv-cta{padding:32px 24px}
+  .rv-summaryrow{grid-template-columns:1fr;gap:4px}
+  .rv-formfoot{flex-wrap:wrap}
+  .rv-table th,.rv-table td{padding:var(--space-3)}
+}
+
+@media (max-width:900px){
+  /* Mobilon a telefonszám szövege kiesik, a nyelvválasztó marad. */
+  .rv-langs{margin-right:var(--space-1)}
+}
+
+@media (max-width:640px){
+  .rv-lang{min-width:28px;padding:0 5px}
+}
+

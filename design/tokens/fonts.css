@@ -1,0 +1,11 @@
+/* Riverside webfonts.
+   SUBSTITUTION NOTE: no brand font files were provided. EB Garamond (display)
+   and Karla (UI/body) are Google Fonts stand-ins chosen to match the brand's
+   warm, quiet, unpretentious character. Swap in licensed files here when available. */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..600&family=Karla:ital,wght@0,300..700;1,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root{
+  --font-display:"EB Garamond","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --font-ui:"Karla","Helvetica Neue",Helvetica,system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}

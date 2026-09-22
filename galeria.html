@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ismerd meg a házat képekben. — Riverside</title>
+<meta name="description" content="Ami a fotókon látszik, az van. A sorozat végén a földszint és az emelet 3D alaprajza is megtalálható." />
+<link rel="canonical" href="https://riverside-koeroes.com/galeria.html" />
+<link rel="alternate" hreflang="hu" href="https://riverside-koeroes.com/galeria.html" />
+<link rel="alternate" hreflang="de" href="https://riverside-koeroes.com/de/galerie.html" />
+<link rel="alternate" hreflang="en" href="https://riverside-koeroes.com/en/gallery.html" />
+<link rel="alternate" hreflang="x-default" href="https://riverside-koeroes.com/galeria.html" />
+
+<!-- Megosztáskor (üzenetben, közösségi oldalon) ez látszik. -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Riverside" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:title" content="Ismerd meg a házat képekben. — Riverside" />
+<meta property="og:description" content="Ami a fotókon látszik, az van. A sorozat végén a földszint és az emelet 3D alaprajza is megtalálható." />
+<meta property="og:url" content="https://riverside-koeroes.com/galeria.html" />
+<meta property="og:image" content="https://riverside-koeroes.com/assets/images/garden-dock-willow.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#3f4a44" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/animations.css" />
+
+<!-- Strukturált adat: a keresőnek ebből derül ki, hogy szálláshelyről
+     van szó, hol van, mennyibe kerül és hogyan lehet elérni. -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VacationRental","name":"Riverside","description":"Két hálószoba, nagy kert, medence, szauna és saját stég — az egész ház a tiétek, 5 + 2 főnek. Csendes hely — nem bulinyaraló.","url":"https://riverside-koeroes.com/index.html","image":["https://riverside-koeroes.com/assets/images/garden-dock-willow.jpg","https://riverside-koeroes.com/assets/images/pool-1.jpg"],"telephone":"+36 20 483 2723","email":"info@riverside-koeroes.com","address":{"@type":"PostalAddress","streetAddress":"Keresztháti üdülősor 86.","postalCode":"5561","addressLocality":"Békésszentandrás","addressCountry":"HU"},"geo":{"@type":"GeoCoordinates","latitude":46.88871763134489,"longitude":20.49571814291005},"numberOfRooms":3,"occupancy":{"@type":"QuantitativeValue","maxValue":7},"floorSize":{"@type":"QuantitativeValue","value":85,"unitCode":"MTK"},"petsAllowed":true,"priceRange":"55000–75000 HUF","checkinTime":"15:00","checkoutTime":"10:00"}</script>
+</head>
+<body>
+
+<!-- Billentyűzettel érkezőknek: az első Tab a tartalomra ugrik, nem
+     kell végigjárni a menüt minden oldalon. -->
+<a class="rv-skiplink" href="#tartalom">Ugrás a tartalomra</a>
+
+<header class="rv-header">
+  <div class="rv-header__inner">
+    <a class="rv-wordmark" href="index.html">
+      <span class="rv-wordmark__name">Riverside</span>
+      <span class="rv-wordmark__sub">Békésszentandrás</span>
+    </a>
+    <nav class="rv-nav" aria-label="Menü">
+      <a class="rv-navlink" href="a-haz.html"
+          >A ház</a>
+      <a class="rv-navlink" href="arak.html"
+          >Árak</a>
+      <a class="rv-navlink rv-navlink--active" href="galeria.html"
+          aria-current="page">Galéria</a>
+      <a class="rv-navlink" href="kornyek.html"
+          >Környék</a>
+      <a class="rv-navlink" href="kapcsolat.html"
+          >Kapcsolat</a>
+    </nav>
+    <div class="rv-header__actions">
+      <div class="rv-langs" role="group" aria-label="Nyelv"><a class="rv-lang rv-lang--on" href="galeria.html" lang="hu"
+        aria-current="true" title="Magyar">HU</a><a class="rv-lang" href="de/galerie.html" lang="de"
+         title="Deutsch">DE</a><a class="rv-lang" href="en/gallery.html" lang="en"
+         title="English">EN</a></div>
+      <a class="rv-header__phone" href="tel:+36204832723">+36 20 483 2723</a>
+      <a class="rv-btn rv-btn--accent rv-btn--md" href="foglalas.html" >Foglalás</a>
+      <button type="button" class="rv-header__burger rv-iconbtn" id="rv-burger"
+              aria-label="Menü" aria-expanded="false" aria-controls="rv-drawer">☰</button>
+    </div>
+  </div>
+  <!-- Diszkrét haladásjelző a fejléc alsó élén — görgetés közben nő. -->
+  <span class="rv-progress" aria-hidden="true"></span>
+  <div class="rv-drawer" id="rv-drawer" hidden>
+    <div class="rv-drawer__inner">
+      <a class="rv-drawer__link" href="a-haz.html">A ház</a>
+      <a class="rv-drawer__link" href="arak.html">Árak</a>
+      <a class="rv-drawer__link" href="galeria.html">Galéria</a>
+      <a class="rv-drawer__link" href="kornyek.html">Környék</a>
+      <a class="rv-drawer__link" href="kapcsolat.html">Kapcsolat</a>
+      <a class="rv-drawer__link" href="foglalasom.html">Foglalásom</a>
+      <a class="rv-drawer__link" href="hazirend.html">Házirend</a>
+    </div>
+  </div>
+</header>
+
+<!-- Állandó magasságú helykitöltő a rögzített fejléc alatt. Ezért nem
+     ugrik meg a tartalom, amikor a fejléc görgetéskor összehúzódik.
+     A főoldalon nincs rá szükség: ott a fejléc a fotóra ül rá. -->
+<div class="rv-headerSpacer" aria-hidden="true"></div>
+
+<main id="tartalom" class="rv-hasCtabar">
+<section class="rv-container rv-section">
+      <div class="rv-reveal"><div class="rv-section__head">
+        <div class="rv-eyebrow rv-eyebrow--gap">Galéria</div>
+        <h1 class="rv-section__title">Ismerd meg a házat képekben.</h1>
+        <p class="rv-section__lead">Ami a fotókon látszik, az van. A sorozat végén a földszint és az emelet 3D alaprajza is megtalálható.</p>
+      </div></div>
+      <div class="rv-reveal" style="--rv-delay:90ms"><div class="rv-filters" role="group" aria-label="Fotók szűrése">
+        <button type="button" class="rv-filter rv-filter--on" data-szuro="mind">
+      Mind (38)</button>
+        <button type="button" class="rv-filter" data-szuro="haz">
+      A ház kívülről (4)</button>
+        <button type="button" class="rv-filter" data-szuro="viz">
+      Víz és stég (7)</button>
+        <button type="button" class="rv-filter" data-szuro="kert">
+      Kert és medence (7)</button>
+        <button type="button" class="rv-filter" data-szuro="belso">
+      Nappali és konyha (8)</button>
+        <button type="button" class="rv-filter" data-szuro="halo">
+      Hálószobák és fürdők (8)</button>
+        <button type="button" class="rv-filter" data-szuro="alaprajz">
+      Alaprajz (4)</button>
+      </div>
+      <!-- Ide kerül a jelzés, ha a látogató egy címkéről (medence,
+           stég …) érkezett, és csak annak a fotóit látja. -->
+      <div class="rv-filternote" id="rv-cimke-szuro" hidden></div>
+      <ul class="rv-photogrid" id="rv-photogrid">
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="haz" data-foto="house-front-1.jpg">
+        <img src="assets/images/house-front-1.jpg" alt="A ház a kert felől, a térköves bejáróval és a kerti kemencével"
+       class="rv-photo" width="768" height="576"
+       loading="eager" decoding="async" />
+        <span class="rv-photogrid__cap">A ház a kert felől, a térköves bejáróval és a kerti kemencével</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="haz" data-foto="house-front-2.jpg">
+        <img src="assets/images/house-front-2.jpg" alt="A tornácos homlokzat és az erkély a bejárat felől"
+       class="rv-photo" width="768" height="576"
+       loading="eager" decoding="async" />
+        <span class="rv-photogrid__cap">A tornácos homlokzat és az erkély a bejárat felől</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="haz" data-foto="house-side-river.jpg">
+        <img src="assets/images/house-side-river.jpg" alt="A kapu és a kerítés az utca felől, a ház oldalánál"
+       class="rv-photo" width="1280" height="959"
+       loading="eager" decoding="async" />
+        <span class="rv-photogrid__cap">A kapu és a kerítés az utca felől, a ház oldalánál</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="haz" data-foto="river-house-1.jpg">
+        <img src="assets/images/river-house-1.jpg" alt="A ház és a fedett kerti ülőhely a gyepről nézve"
+       class="rv-photo" width="1280" height="960"
+       loading="eager" decoding="async" />
+        <span class="rv-photogrid__cap">A ház és a fedett kerti ülőhely a gyepről nézve</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="viz" data-foto="house-river.jpg">
+        <img src="assets/images/house-river.jpg" alt="A stég a holtágon, csónakkal és vízibiciklivel"
+       class="rv-photo" width="362" height="271"
+       loading="eager" decoding="async" />
+        <span class="rv-photogrid__cap">A stég a holtágon, csónakkal és vízibiciklivel</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="viz" data-foto="garden-dock-willow.jpg">
+        <img src="assets/images/garden-dock-willow.jpg" alt="A stéghez vezető út a fűzfa alatt, hintával"
+       class="rv-photo" width="1280" height="960"
+       loading="eager" decoding="async" />
+        <span class="rv-photogrid__cap">A stéghez vezető út a fűzfa alatt, hintával</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="viz" data-foto="garden-dock.jpg">
+        <img src="assets/images/garden-dock.jpg" alt="Horgászbotok a stégen, kora reggel"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Horgászbotok a stégen, kora reggel</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="viz" data-foto="river-house-2.jpg">
+        <img src="assets/images/river-house-2.jpg" alt="A part a kert végében, a vízre néző padokkal"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A part a kert végében, a vízre néző padokkal</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="viz" data-foto="river-from-balcony.jpg">
+        <img src="assets/images/river-from-balcony.jpg" alt="A holtág a kert felől, fűzfák között"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A holtág a kert felől, fűzfák között</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="viz" data-foto="garden-kayak.jpg">
+        <img src="assets/images/garden-kayak.jpg" alt="A két túrakajak és a vízibicikli a parton"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A két túrakajak és a vízibicikli a parton</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="viz" data-foto="garden-ladder.jpg">
+        <img src="assets/images/garden-ladder.jpg" alt="Létra a vízbe a stég mellett"
+       class="rv-photo" width="1280" height="959"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Létra a vízbe a stég mellett</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="kert" data-foto="pool-1.jpg">
+        <img src="assets/images/pool-1.jpg" alt="A medence a kertben, napozóágyakkal"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A medence a kertben, napozóágyakkal</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="kert" data-foto="pool-2.jpg">
+        <img src="assets/images/pool-2.jpg" alt="A medence és a fedett pihenő a térkövezett részen"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A medence és a fedett pihenő a térkövezett részen</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="kert" data-foto="pool-3.jpg">
+        <img src="assets/images/pool-3.jpg" alt="Pingpongasztal a medence mellett"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Pingpongasztal a medence mellett</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="kert" data-foto="pool-4.jpg">
+        <img src="assets/images/pool-4.jpg" alt="A medence napernyőkkel és nyugágyakkal, nyáron"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A medence napernyőkkel és nyugágyakkal, nyáron</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="kert" data-foto="pool-5.jpg">
+        <img src="assets/images/pool-5.jpg" alt="A fedett pihenő csocsóasztallal és ülőgarnitúrával"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A fedett pihenő csocsóasztallal és ülőgarnitúrával</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="kert" data-foto="garden-grill.jpg">
+        <img src="assets/images/garden-grill.jpg" alt="A kerti kemence és a kültéri étkező a fenyők tövében"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A kerti kemence és a kültéri étkező a fenyők tövében</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="kert" data-foto="garden-pergola.jpg">
+        <img src="assets/images/garden-pergola.jpg" alt="A fedett kerti asztal a tűzifa mellett"
+       class="rv-photo" width="1280" height="959"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A fedett kerti asztal a tűzifa mellett</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="belso" data-foto="living-1.jpg">
+        <img src="assets/images/living-1.jpg" alt="A nappali a kanapéval és a fa lépcsővel"
+       class="rv-photo" width="362" height="271"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A nappali a kanapéval és a fa lépcsővel</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="belso" data-foto="living-2.jpg">
+        <img src="assets/images/living-2.jpg" alt="A nappali a téglaboltív és a kandalló felől"
+       class="rv-photo" width="362" height="271"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A nappali a téglaboltív és a kandalló felől</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="belso" data-foto="living-3.jpg">
+        <img src="assets/images/living-3.jpg" alt="Az étkező a nagy asztallal, a nappaliból nyílva"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Az étkező a nagy asztallal, a nappaliból nyílva</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="belso" data-foto="living-4.jpg">
+        <img src="assets/images/living-4.jpg" alt="Az étkezőasztal piros székekkel, a teraszajtó mellett"
+       class="rv-photo" width="362" height="271"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Az étkezőasztal piros székekkel, a teraszajtó mellett</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="belso" data-foto="kitchen-1.jpg">
+        <img src="assets/images/kitchen-1.jpg" alt="A konyha a boltív alatt, indukciós főzőlappal"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A konyha a boltív alatt, indukciós főzőlappal</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="belso" data-foto="kitchen-2.jpg">
+        <img src="assets/images/kitchen-2.jpg" alt="A konyhapult mosogatóval és sütővel"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A konyhapult mosogatóval és sütővel</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="belso" data-foto="kitchen-3.jpg">
+        <img src="assets/images/kitchen-3.jpg" alt="A konyha a hűtővel és a mikrohullámú sütővel"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A konyha a hűtővel és a mikrohullámú sütővel</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="belso" data-foto="kitchen-4.jpg">
+        <img src="assets/images/kitchen-4.jpg" alt="Kávéfőző és vízforraló a konyhapulton"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Kávéfőző és vízforraló a konyhapulton</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="halo" data-foto="bed-riverside-1.jpg">
+        <img src="assets/images/bed-riverside-1.jpg" alt="Az erkélyes hálószoba franciaággyal, fa mennyezettel"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Az erkélyes hálószoba franciaággyal, fa mennyezettel</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="halo" data-foto="bed-riverside-2.jpg">
+        <img src="assets/images/bed-riverside-2.jpg" alt="A hálószoba az ágyakkal és a beépített szekrénnyel"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A hálószoba az ágyakkal és a beépített szekrénnyel</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="halo" data-foto="bed-riverside-3.jpg">
+        <img src="assets/images/bed-riverside-3.jpg" alt="A hálószoba szekrénysora televízióval"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A hálószoba szekrénysora televízióval</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="halo" data-foto="balcony.jpg">
+        <img src="assets/images/balcony.jpg" alt="Az erkély asztallal és székekkel, kilátással a kertre"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Az erkély asztallal és székekkel, kilátással a kertre</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="halo" data-foto="bath-upstairs-1.jpg">
+        <img src="assets/images/bath-upstairs-1.jpg" alt="Az emeleti fürdőszoba zuhanykabinnal és tetőablakkal"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Az emeleti fürdőszoba zuhanykabinnal és tetőablakkal</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="halo" data-foto="bath-upstairs-2.jpg">
+        <img src="assets/images/bath-upstairs-2.jpg" alt="Az emeleti fürdő mosdóval és törölközőszárítóval"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Az emeleti fürdő mosdóval és törölközőszárítóval</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="halo" data-foto="bath-downstairs.jpg">
+        <img src="assets/images/bath-downstairs.jpg" alt="A földszinti fürdőszoba zuhanykabinnal"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A földszinti fürdőszoba zuhanykabinnal</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="halo" data-foto="wc-ground.jpg">
+        <img src="assets/images/wc-ground.jpg" alt="Külön WC a földszinten"
+       class="rv-photo" width="1248" height="1664"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Külön WC a földszinten</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="alaprajz" data-foto="room-parterre-1.jpg">
+        <img src="assets/images/room-parterre-1.jpg" alt="A földszint 3D alaprajza: nappali, étkező és a lépcső"
+       class="rv-photo" width="1280" height="960"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A földszint 3D alaprajza: nappali, étkező és a lépcső</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="alaprajz" data-foto="room-parterre-2.jpg">
+        <img src="assets/images/room-parterre-2.jpg" alt="A földszint 3D alaprajza másik nézetből"
+       class="rv-photo" width="1280" height="958"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">A földszint 3D alaprajza másik nézetből</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="alaprajz" data-foto="bed-river-1.jpg">
+        <img src="assets/images/bed-river-1.jpg" alt="Az emelet 3D alaprajza: a két hálószoba és a fürdő"
+       class="rv-photo" width="1280" height="961"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Az emelet 3D alaprajza: a két hálószoba és a fürdő</span>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="rv-photogrid__item"
+        data-nagyito="galeria" data-kategoria="alaprajz" data-foto="bed-river-2.jpg">
+        <img src="assets/images/bed-river-2.jpg" alt="Az erkélyes hálószoba 3D alaprajza"
+       class="rv-photo" width="1280" height="959"
+       loading="lazy" decoding="async" />
+        <span class="rv-photogrid__cap">Az erkélyes hálószoba 3D alaprajza</span>
+      </button>
+    </li>
+      </ul></div>
+    </section>
+</main>
+
+<footer class="rv-footer">
+  <div class="rv-footer__grid">
+    <div>
+      <div class="rv-footer__mark">Riverside</div>
+      <p class="rv-footer__col rv-footer__intro">Nyaraló a Kákafoki holtág partján, Békésszentandráson. Két hálószoba, nagy kert, medence és saját stég — 5 + 2 főnek, egyben kiadva.</p>
+    </div>
+    <nav class="rv-footer__col" aria-label="A ház">
+      <span class="rv-eyebrow rv-footer__eyebrow">A ház</span>
+      <a href="a-haz.html">A ház és felszereltség</a>
+      <a href="galeria.html">Galéria</a>
+      <a href="arak.html">Árak és feltételek</a>
+      <a href="foglalas.html">Foglalás</a>
+      <a href="foglalasom.html">Foglalásom</a>
+    </nav>
+    <address class="rv-footer__col">
+      <span class="rv-eyebrow rv-footer__eyebrow">Kapcsolat</span>
+      <a href="tel:+36204832723">+36 20 483 2723</a>
+      <a href="mailto:info@riverside-koeroes.com">info@riverside-koeroes.com</a>
+      <span>5561 Békésszentandrás, Keresztháti üdülősor 86.</span>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </address>
+    <nav class="rv-footer__col" aria-label="Jó tudni">
+      <span class="rv-eyebrow rv-footer__eyebrow">Jó tudni</span>
+      <a href="hazirend.html">Házirend</a>
+      <a href="adatkezeles.html">Adatkezelés</a>
+      <a href="impresszum.html">Impresszum</a>
+      <button type="button" class="rv-linkbtn" id="rv-demo-vissza">Demóadatok visszaállítása</button>
+    </nav>
+  </div>
+  <div class="rv-footer__bar">
+    <div class="rv-footer__barInner">
+      <span>© 2026 Riverside · Piroska és Wilhelm Wenz</span>
+      <span>NTAK: MA 21002678</span>
+    </div>
+  </div>
+</footer>
+<div class="rv-ctabar">
+  <div class="rv-ctabar__price">
+    <span class="rv-ctabar__from">55 000 Ft</span>
+    <span class="rv-ctabar__note">/ éj · a teljes házra</span>
+  </div>
+  <a class="rv-btn rv-btn--accent rv-btn--md" href="foglalas.html" >Foglalás</a>
+</div>
+
+<script>
+  /* Az oldal önazonossága: nyelv, oldalkulcs és a többi oldal címe.
+     A js/ mappa fájljai ebből tudják, hova irányítsanak. */
+  window.RV = { nyelv: 'hu', oldal: 'galeria', utak: {"fooldal":"index.html","haz":"a-haz.html","arak":"arak.html","galeria":"galeria.html","kornyek":"kornyek.html","foglalas":"foglalas.html","foglalasom":"foglalasom.html","hazirend":"hazirend.html","kapcsolat":"kapcsolat.html","adatkezeles":"adatkezeles.html","impresszum":"impresszum.html"} };
+</script>
+<script src="js/szotar.js"></script>
+<script src="js/tartalom.js"></script>
+<script src="js/adatok.js"></script>
+<script src="js/logika.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigacio.js"></script>
+<script src="js/animaciok.js"></script>
+<script src="js/nagyito.js"></script>
+<script src="js/galeria.js"></script>
+
+</body>
+</html>

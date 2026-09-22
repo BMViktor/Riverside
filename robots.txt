@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://riverside-koeroes.com/sitemap.xml
